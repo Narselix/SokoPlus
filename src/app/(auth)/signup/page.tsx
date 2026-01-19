@@ -77,7 +77,7 @@ export default function SignupPage() {
         title: "Compte créé",
         description: "Votre compte a été créé avec succès.",
       });
-      router.push("/");
+      router.push("/profile");
     } catch (error: any) {
       toast({
         variant: "destructive",
