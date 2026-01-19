@@ -7,8 +7,7 @@ const firebaseConfig = {
   "apiKey": "AIzaSyA0W5Dd4N0d64VGDDS8hJDkI0RZIX0bpe8",
   "authDomain": "studio-466280383-fc285.firebaseapp.com",
   "measurementId": "",
-  "messagingSenderId": "352870012434",
-  "storageBucket": "studio-466280383-fc285.appspot.com"
+  "messagingSenderId": "352870012434"
 };
 
 export default firebaseConfig;
