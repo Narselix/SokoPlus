@@ -22,11 +22,17 @@ export function useUser() {
         const unsubscribe = onAuthStateChanged(auth, async (user) => {
             setUser(user);
             if (user) {
-                const userDocRef = doc(firestore as Firestore, 'users', user.uid);
-                const userDoc = await getDoc(userDocRef);
-                if (userDoc.exists()) {
-                    setUserProfile(userDoc.data());
-                } else {
+                try {
+                    const userDocRef = doc(firestore as Firestore, 'users', user.uid);
+                    const userDoc = await getDoc(userDocRef);
+                    if (userDoc.exists()) {
+                        setUserProfile(userDoc.data());
+                    } else {
+                        console.warn("Le document de l'utilisateur n'existe pas pour l'UID:", user.uid);
+                        setUserProfile(null);
+                    }
+                } catch (error) {
+                    console.error("Échec de la récupération du document utilisateur:", error);
                     setUserProfile(null);
                 }
             } else {
