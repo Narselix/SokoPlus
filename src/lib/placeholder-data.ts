@@ -21,6 +21,12 @@ export const jobs = [
     { id: 3, title: 'Traduction (Français - Swahili)', company: 'ONG locale', location: 'Télétravail', type: 'Freelance', tags: ['Traduction', 'Social'], logo: PlaceHolderImages.find(p => p.id === 'logo-ong'), description: 'Mission freelance pour traduire des documents importants relatifs à nos projets sociaux dans la région. Une parfaite maîtrise du français et du swahili, ainsi qu\'une sensibilité culturelle, sont exigées. Mission ponctuelle avec possibilité de collaboration à long terme.' },
 ];
 
+export const freelanceMissions = [
+    { id: 1, title: 'Création de logo pour un café local', client: 'Café de la Paix', budget: '100$', tags: ['Design Graphique', 'Logo', 'Branding'], logo: PlaceHolderImages.find(p => p.id === 'logo-client-a'), description: 'Nous ouvrons un nouveau café à Goma et avons besoin d\'un logo moderne qui représente notre identité. Le logo doit être simple, mémorable et utilisable sur divers supports (enseigne, tasses, menus).', type: 'Projet ponctuel' },
+    { id: 2, title: 'Rédaction d\'articles de blog sur la tech', client: 'Kivu Tech Hub', budget: '50$ / article', tags: ['Rédaction', 'Contenu Web', 'Technologie'], logo: PlaceHolderImages.find(p => p.id === 'logo-client-b'), description: 'Nous recherchons un rédacteur pour créer 4 articles de blog par mois sur les dernières tendances technologiques en Afrique. Chaque article doit faire environ 800 mots et être optimisé pour le SEO.', type: 'Mission récurrente' },
+    { id: 3, title: 'Montage vidéo pour une campagne de sensibilisation', client: 'ONG Santé Pour Tous', budget: '250$', tags: ['Montage Vidéo', 'Adobe Premiere', 'Social'], logo: PlaceHolderImages.find(p => p.id === 'logo-ong'), description: 'Nous avons besoin d\'un monteur vidéo pour assembler des séquences brutes en une vidéo de 2 minutes pour notre prochaine campagne sur les réseaux sociaux. La vidéo doit être dynamique et percutante.', type: 'Projet ponctuel' },
+];
+
 export const solidarityCampaigns = [
     { id: 1, title: 'Scolarisation des enfants de Masisi', organizer: 'Fondation Kivu Espoir', raised: '4,500$', goal: '10,000$', progress: 45, image: PlaceHolderImages.find(p => p.id === 'solidarity-school') },
     { id: 2, title: 'Accès à l\'eau potable à Minova', organizer: 'Action Eau Propre', raised: '18,200$', goal: '25,000$', progress: 73, image: PlaceHolderImages.find(p => p.id === 'solidarity-water') },

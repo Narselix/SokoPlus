@@ -125,6 +125,18 @@
       "description": "Community support article",
       "imageUrl": "https://images.unsplash.com/photo-1759592702763-c3d397531f30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21tdW5pdHklMjBoYW5kc3xlbnwwfHx8fDE3NjkwMTg0MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "community hands"
+    },
+    {
+      "id": "logo-client-a",
+      "description": "Client A logo",
+      "imageUrl": "https://images.unsplash.com/photo-1687523327554-fa9f50423489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29tcGFueSUyMGxvZ298ZW58MHx8fHwxNzY4OTY4OTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "logo-client-b",
+      "description": "Client B logo",
+      "imageUrl": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWNoJTIwc3RhcnR1cHxlbnwwfHx8fDE3NjkwNTQ2MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tech startup"
     }
   ]
 }

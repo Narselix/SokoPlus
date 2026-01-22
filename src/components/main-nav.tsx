@@ -21,6 +21,7 @@ import {
   Pill,
   Smile,
   Wand2,
+  ClipboardSignature,
 } from "lucide-react";
 import { SokoPlusLogo } from "./icons";
 
@@ -60,6 +61,11 @@ const communityLinks = [
     href: "/jobs",
     label: "Emploi",
     icon: Briefcase,
+  },
+  {
+    href: "/freelance",
+    label: "Freelance",
+    icon: ClipboardSignature,
   },
   {
     href: "/solidarity",
