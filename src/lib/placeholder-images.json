@@ -7,34 +7,100 @@
       "imageHint": "students learning"
     },
     {
-      "id": "course-1",
-      "description": "Digital Marketing Course",
-      "imageUrl": "https://images.unsplash.com/photo-1651684195895-38708dc94cfa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsYXB0b3AlMjBtYXJrZXRpbmd8ZW58MHx8fHwxNzY4ODExNTExfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "laptop marketing"
+      "id": "product-coffee",
+      "description": "Coffee product",
+      "imageUrl": "https://images.unsplash.com/photo-1690983326555-8b8e27843a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb2ZmZWUlMjBiZWFuc3xlbnwwfHx8fDE3NjkwNDc4OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coffee beans"
     },
     {
-      "id": "course-2",
-      "description": "Entrepreneurship Course",
-      "imageUrl": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHBsYW58ZW58MHx8fHwxNzY4ODExNTExfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "business plan"
+      "id": "product-dress",
+      "description": "Dress product",
+      "imageUrl": "https://images.unsplash.com/photo-1664151100543-831e51069d1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhZnJpY2FuJTIwZHJlc3N8ZW58MHx8fHwxNzY5MDY0ODI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "african dress"
     },
     {
-      "id": "course-3",
-      "description": "Graphic Design Course",
-      "imageUrl": "https://images.unsplash.com/photo-1614792403436-ba5b3e747604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkZXNpZ24lMjB0b29sc3xlbnwwfHx8fDE3Njg3NTE2MDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "design tools"
+      "id": "product-basket",
+      "description": "Basket product",
+      "imageUrl": "https://images.unsplash.com/photo-1566958339156-8ffbfb53acb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d292ZW4lMjBiYXNrZXR8ZW58MHx8fHwxNzY4OTg3MTM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woven basket"
     },
     {
-      "id": "course-4",
-      "description": "Web Development Course",
-      "imageUrl": "https://images.unsplash.com/photo-1753998943619-b9cd910887e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb2RlJTIwc2NyZWVufGVufDB8fHx8MTc2ODc3ODc1OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "code screen"
+      "id": "product-honey",
+      "description": "Honey product",
+      "imageUrl": "https://images.unsplash.com/photo-1663963603322-d51827492f69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxob25leSUyMGphcnxlbnwwfHx8fDE3NjkwMjIyMzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "honey jar"
     },
     {
-      "id": "certificate",
-      "description": "A certificate of completion",
-      "imageUrl": "https://images.unsplash.com/photo-1761671613933-159512988cb3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjZXJ0aWZpY2F0ZSUyMGRvY3VtZW50fGVufDB8fHx8MTc2ODk5NTA5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "certificate document"
+      "id": "logo-tech",
+      "description": "Tech company logo",
+      "imageUrl": "https://images.unsplash.com/photo-1662057168154-89300791ad6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3Njg5ODU2Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "logo-marketing",
+      "description": "Marketing agency logo",
+      "imageUrl": "https://images.unsplash.com/photo-1722891067479-5fd39edbfc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYXJrZXRpbmclMjBsb2dvfGVufDB8fHx8MTc2ODk4NDgyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "marketing logo"
+    },
+    {
+      "id": "logo-ong",
+      "description": "NGO logo",
+      "imageUrl": "https://images.unsplash.com/photo-1750049790142-2db418e5745c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxuZ28lMjBsb2dvfGVufDB8fHx8MTc2OTA2NDgyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ngo logo"
+    },
+    {
+      "id": "solidarity-school",
+      "description": "School children for solidarity campaign",
+      "imageUrl": "https://images.unsplash.com/photo-1581726707445-75cbe4efc586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzY2hvb2wlMjBjaGlsZHJlbnxlbnwwfHx8fDE3NjkwMTI0MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "school children"
+    },
+    {
+      "id": "solidarity-water",
+      "description": "Clean water for solidarity campaign",
+      "imageUrl": "https://images.unsplash.com/photo-1559079236-2e64f89c7764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjbGVhbiUyMHdhdGVyfGVufDB8fHx8MTc2OTAzNTYxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "clean water"
+    },
+    {
+      "id": "solidarity-microcredit",
+      "description": "Microcredit for solidarity campaign",
+      "imageUrl": "https://images.unsplash.com/photo-1449247666642-264389f5f5b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzbWFsbCUyMGJ1c2luZXNzfGVufDB8fHx8MTc2ODk4Nzk4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "small business"
+    },
+    {
+      "id": "pharma-paracetamol",
+      "description": "Paracetamol box",
+      "imageUrl": "https://images.unsplash.com/photo-1648712788983-11311123c622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2luZSUyMGJveHxlbnwwfHx8fDE3NjkwNjQ4Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medicine box"
+    },
+    {
+      "id": "pharma-syrup",
+      "description": "Syrup bottle",
+      "imageUrl": "https://images.unsplash.com/photo-1592272072940-cde40abbadfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzeXJ1cCUyMGJvdHRsZXxlbnwwfHx8fDE3NjkwMDM3NTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "syrup bottle"
+    },
+    {
+      "id": "pharma-cream",
+      "description": "Cream tube",
+      "imageUrl": "https://images.unsplash.com/photo-1699885725103-2bf0a3c38cbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjcmVhbSUyMHR1YmV8ZW58MHx8fHwxNzY5MDA2OTkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cream tube"
+    },
+    {
+      "id": "pharma-vitamins",
+      "description": "Vitamins bottle",
+      "imageUrl": "https://images.unsplash.com/photo-1687200267887-e334037363f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx2aXRhbWlucyUyMGJvdHRsZXxlbnwwfHx8fDE3Njg5NDgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "vitamins bottle"
+    },
+    {
+      "id": "wellbeing-stress",
+      "description": "Stress management article",
+      "imageUrl": "https://images.unsplash.com/photo-1631963137006-7c6d5f103ba2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjYWxtJTIwbWVkaXRhdGlvbnxlbnwwfHx8fDE3Njg5NjUxNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "calm meditation"
+    },
+    {
+      "id": "wellbeing-community",
+      "description": "Community support article",
+      "imageUrl": "https://images.unsplash.com/photo-1759592702763-c3d397531f30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21tdW5pdHklMjBoYW5kc3xlbnwwfHx8fDE3NjkwMTg0MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "community hands"
     }
   ]
 }
