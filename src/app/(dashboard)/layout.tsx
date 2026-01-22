@@ -6,7 +6,7 @@ import { Header } from "@/components/header";
 import { useUser } from "@/firebase/auth/use-user";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { ShuleLogo } from "@/components/icons";
+import { SokoPlusLogo } from "@/components/icons";
 
 export default function DashboardLayout({
   children,
@@ -25,7 +25,7 @@ export default function DashboardLayout({
   if (loading || !user) {
     return (
       <div className="flex h-screen w-screen items-center justify-center bg-background">
-        <ShuleLogo className="h-12 w-12 animate-spin text-primary" />
+        <SokoPlusLogo className="h-12 w-12 animate-spin text-primary" />
       </div>
     );
   }

@@ -67,7 +67,7 @@ export default function LoginPage() {
       <CardHeader>
         <CardTitle className="text-2xl font-headline">Connexion</CardTitle>
         <CardDescription>
-          Entrez votre email pour vous connecter à votre compte Shule.
+          Entrez votre email pour vous connecter à votre compte Soko+.
         </CardDescription>
       </CardHeader>
       <Form {...form}>

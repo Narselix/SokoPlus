@@ -92,7 +92,7 @@ export default function SignupPage() {
       <CardHeader>
         <CardTitle className="text-2xl font-headline">Créer un compte</CardTitle>
         <CardDescription>
-          Créez votre compte pour accéder à la plateforme Shule.
+          Créez votre compte pour accéder à la plateforme Soko+.
         </CardDescription>
       </CardHeader>
       <Form {...form}>

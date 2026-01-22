@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ShuleLogo } from "@/components/icons";
+import { SokoPlusLogo } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, Users, Award } from "lucide-react";
@@ -31,8 +31,8 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen">
       <header className="container mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <ShuleLogo className="h-8 w-8 text-primary" />
-          <span className="font-headline text-2xl font-bold">Shule</span>
+          <SokoPlusLogo className="h-8 w-8 text-primary" />
+          <span className="font-headline text-2xl font-bold">Soko+</span>
         </Link>
         <nav className="flex items-center gap-4">
           <Button variant="ghost" asChild>
@@ -48,10 +48,10 @@ export default function LandingPage() {
         <section className="relative py-20 md:py-32 bg-secondary/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tight text-foreground">
-              Votre école numérique, partout en Afrique.
+              L'écosystème qui connecte le Kivu.
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
-              Shule est la plateforme EdTech qui digitalise l'apprentissage et connecte les apprenants, enseignants et institutions.
+              Soko+ est une plateforme qui intègre l'éducation, le commerce, l'emploi et la solidarité pour dynamiser la communauté.
             </p>
             <div className="mt-10 flex justify-center gap-4">
               <Button size="lg" asChild>
@@ -69,7 +69,7 @@ export default function LandingPage() {
             <div className="text-center mb-12">
               <h2 className="font-headline text-3xl md:text-4xl font-bold">Une plateforme pour réussir</h2>
               <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-                Tout ce dont vous avez besoin pour apprendre et enseigner en ligne.
+                Tout ce dont vous avez besoin pour apprendre, entreprendre et vous développer.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -92,7 +92,7 @@ export default function LandingPage() {
 
       <footer className="py-8 bg-card border-t">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Shule. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} Soko+. Tous droits réservés.</p>
         </div>
       </footer>
     </div>

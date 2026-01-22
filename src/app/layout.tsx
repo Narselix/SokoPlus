@@ -4,8 +4,8 @@ import { Toaster } from "@/components/ui/toaster"
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
-  title: 'Shule - Your Digital School',
-  description: 'Learn, teach, and manage education all in one place.',
+  title: 'Soko+ - L\'écosystème qui connecte le Kivu',
+  description: 'Éducation, commerce, emploi et solidarité pour dynamiser la communauté.',
 };
 
 export default function RootLayout({

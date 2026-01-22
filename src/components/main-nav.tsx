@@ -6,56 +6,157 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
+  SidebarSeparator,
+  SidebarGroup,
+  SidebarGroupLabel,
 } from "@/components/ui/sidebar";
 import {
-  BookCopy,
   LayoutDashboard,
+  GraduationCap,
+  BookCopy,
   Award,
+  Store,
+  Briefcase,
+  HeartHandshake,
+  Pill,
+  Smile,
+  Wand2,
 } from "lucide-react";
-import { ShuleLogo } from "./icons";
+import { SokoPlusLogo } from "./icons";
 
-const links = [
+const primaryLinks = [
   {
     href: "/",
     label: "Tableau de bord",
     icon: LayoutDashboard,
   },
+];
+
+const educationLinks = [
+   {
+    href: "/education",
+    label: "Éducation",
+    icon: GraduationCap,
+  },
   {
     href: "/courses",
-    label: "Cours",
+    label: "Mes Cours",
     icon: BookCopy,
   },
   {
     href: "/certificates",
-    label: "Certificats",
+    label: "Mes Certificats",
     icon: Award,
   },
 ];
 
+const communityLinks = [
+  {
+    href: "/market",
+    label: "Marché Local",
+    icon: Store,
+  },
+  {
+    href: "/jobs",
+    label: "Emploi",
+    icon: Briefcase,
+  },
+  {
+    href: "/solidarity",
+    label: "Solidarité",
+    icon: HeartHandshake,
+  },
+];
+
+const servicesLinks = [
+    {
+    href: "/pharmacy",
+    label: "Pharmacie",
+    icon: Pill,
+  },
+  {
+    href: "/well-being",
+    label: "Bien-être",
+    icon: Smile,
+  },
+];
+
+const aiLinks = [
+    {
+    href: "/recommendations",
+    label: "Pour vous (IA)",
+    icon: Wand2,
+  },
+]
+
 export function MainNav() {
   const pathname = usePathname();
+
+  const renderLinks = (links: any[]) => links.map((link) => (
+    <SidebarMenuItem key={link.href}>
+        <Link href={link.href} passHref legacyBehavior>
+        <SidebarMenuButton
+            isActive={pathname === link.href || (pathname.startsWith(link.href) && link.href !== "/")}
+            tooltip={link.label}
+        >
+            <link.icon />
+            <span>{link.label}</span>
+        </SidebarMenuButton>
+        </Link>
+    </SidebarMenuItem>
+    ));
 
   return (
     <div className="flex flex-col h-full">
         <div className="p-4 flex items-center gap-2">
-            <ShuleLogo className="h-8 w-8 text-primary" />
-            <span className="font-headline text-xl font-bold group-data-[collapsible=icon]:hidden">Shule</span>
+            <SokoPlusLogo className="h-8 w-8 text-primary" />
+            <span className="font-headline text-xl font-bold group-data-[collapsible=icon]:hidden">Soko+</span>
         </div>
 
-        <SidebarMenu className="flex-1 p-2">
-            {links.map((link) => (
-            <SidebarMenuItem key={link.href}>
-                <Link href={link.href} passHref legacyBehavior>
-                <SidebarMenuButton
-                    isActive={pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))}
-                    tooltip={link.label}
-                >
-                    <link.icon />
-                    <span>{link.label}</span>
-                </SidebarMenuButton>
-                </Link>
-            </SidebarMenuItem>
-            ))}
+        <SidebarMenu className="flex-1 p-2 overflow-y-auto">
+            <SidebarGroup>
+                 <SidebarMenu>
+                    {renderLinks(primaryLinks)}
+                 </SidebarMenu>
+            </SidebarGroup>
+            
+            <SidebarSeparator/>
+
+            <SidebarGroup>
+                <SidebarGroupLabel>Éducation</SidebarGroupLabel>
+                 <SidebarMenu>
+                    {renderLinks(educationLinks)}
+                 </SidebarMenu>
+            </SidebarGroup>
+
+            <SidebarSeparator/>
+            
+            <SidebarGroup>
+                <SidebarGroupLabel>Communauté</SidebarGroupLabel>
+                <SidebarMenu>
+                    {renderLinks(communityLinks)}
+                 </SidebarMenu>
+            </SidebarGroup>
+
+            <SidebarSeparator/>
+
+             <SidebarGroup>
+                <SidebarGroupLabel>Services</SidebarGroupLabel>
+                <SidebarMenu>
+                    {renderLinks(servicesLinks)}
+                 </SidebarMenu>
+            </SidebarGroup>
+            
+             <SidebarSeparator/>
+
+             <SidebarGroup>
+                <SidebarGroupLabel>Personnalisation</SidebarGroupLabel>
+                <SidebarMenu>
+                    {renderLinks(aiLinks)}
+                 </SidebarMenu>
+            </SidebarGroup>
+
+
         </SidebarMenu>
     </div>
   );
