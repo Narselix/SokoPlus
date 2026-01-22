@@ -1,18 +1,31 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { products } from "@/lib/placeholder-data";
-import { Search, ShoppingCart } from "lucide-react";
+import { PlusCircle, Search } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
 
 export default function MarketPage() {
+  const categories = ["Toutes", "Artisanat", "Alimentaire", "Mode", "Électronique", "Maison"];
+
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight font-headline">Marché Local</h1>
-        <p className="text-muted-foreground">Découvrez et achetez les produits de nos artisans et commerçants.</p>
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight font-headline">Marché Local</h1>
+          <p className="text-muted-foreground">Découvrez et achetez les produits de nos artisans et commerçants.</p>
+        </div>
+        <Button asChild>
+          <Link href="/market/publish">
+            <PlusCircle className="mr-2 h-4 w-4" />
+            Publier une annonce
+          </Link>
+        </Button>
       </div>
+
 
       <div className="flex flex-col md:flex-row gap-4">
         <div className="relative flex-grow">
@@ -20,15 +33,14 @@ export default function MarketPage() {
           <Input placeholder="Rechercher un produit..." className="pl-10" />
         </div>
         <div className="flex gap-4">
-            <Select>
+            <Select defaultValue="Toutes">
             <SelectTrigger className="w-full md:w-[180px]">
                 <SelectValue placeholder="Catégories" />
             </SelectTrigger>
             <SelectContent>
-                <SelectItem value="all">Toutes</SelectItem>
-                <SelectItem value="artisanat">Artisanat</SelectItem>
-                <SelectItem value="alimentaire">Alimentaire</SelectItem>
-                <SelectItem value="mode">Mode</SelectItem>
+                {categories.map(category => (
+                     <SelectItem key={category} value={category}>{category}</SelectItem>
+                ))}
             </SelectContent>
             </Select>
             <Button>Rechercher</Button>
@@ -37,31 +49,33 @@ export default function MarketPage() {
       
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {products.map((product) => (
-          <Card key={product.id} className="flex flex-col h-full overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            {product.image && (
-              <div className="aspect-square relative w-full bg-secondary">
-                <Image
-                  src={product.image.imageUrl}
-                  alt={product.name}
-                  fill
-                  className="object-cover"
-                  data-ai-hint={product.image.imageHint}
-                />
-              </div>
-            )}
-            <CardHeader className="p-4">
-                <CardTitle className="text-lg font-headline leading-tight">{product.name}</CardTitle>
-            </CardHeader>
-            <CardContent className="p-4 pt-0 flex-grow">
-              <p className="text-sm text-muted-foreground">Vendu par : {product.seller}</p>
-            </CardContent>
-            <CardFooter className="p-4 pt-0 flex justify-between items-center">
-                <p className="text-lg font-semibold">{product.price}</p>
-                <Button variant="outline" size="icon">
-                    <ShoppingCart className="h-4 w-4"/>
-                    <span className="sr-only">Ajouter au panier</span>
-                </Button>
-            </CardFooter>
+          <Card key={product.id} className="flex flex-col h-full overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
+            <Link href={`/market/${product.id}`} className="flex flex-col h-full">
+              {product.image && (
+                <div className="aspect-square relative w-full bg-secondary overflow-hidden">
+                  <Image
+                    src={product.image.imageUrl}
+                    alt={product.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    data-ai-hint={product.image.imageHint}
+                  />
+                </div>
+              )}
+              <CardHeader className="p-4">
+                  <CardTitle className="text-lg font-headline leading-tight">{product.name}</CardTitle>
+                  <p className="text-sm text-muted-foreground pt-1">{product.location}</p>
+              </CardHeader>
+              <CardContent className="p-4 pt-0 flex-grow">
+                <Badge variant="secondary">{product.category}</Badge>
+              </CardContent>
+              <CardFooter className="p-4 pt-0 flex justify-between items-center">
+                  <p className="text-lg font-semibold">{product.price}</p>
+                  <Button variant="outline" asChild>
+                    <span className="w-full text-center">Voir l'offre</span>
+                  </Button>
+              </CardFooter>
+            </Link>
           </Card>
         ))}
       </div>

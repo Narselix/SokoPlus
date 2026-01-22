@@ -5,10 +5,14 @@ export const courses: any[] = [];
 export const certificates: any[] = [];
 
 export const products = [
-    { id: 1, name: 'Café du Kivu', seller: 'Coopérative des fermiers', price: '10$', image: PlaceHolderImages.find(p => p.id === 'product-coffee') },
-    { id: 2, name: 'Robe en wax', seller: 'Atelier de couture local', price: '35$', image: PlaceHolderImages.find(p => p.id === 'product-dress') },
-    { id: 3, name: 'Panier tressé', seller: 'Artisans de Goma', price: '15$', image: PlaceHolderImages.find(p => p.id === 'product-basket') },
-    { id: 4, name: 'Miel de montagne', seller: 'Apiculteurs Virunga', price: '8$', image: PlaceHolderImages.find(p => p.id === 'product-honey') },
+    { id: 1, name: 'Café du Kivu', seller: 'Coopérative des fermiers', price: '10$', category: 'Alimentaire', location: 'Goma, RDC', description: 'Un café Arabica de haute qualité cultivé sur les pentes fertiles des volcans du Kivu. Notes de dégustation : chocolat, agrumes, et une touche florale.', image: PlaceHolderImages.find(p => p.id === 'product-coffee') },
+    { id: 2, name: 'Robe en wax', seller: 'Atelier de couture local', price: '35$', category: 'Mode', location: 'Bukavu, RDC', description: 'Robe élégante fabriquée à la main avec du tissu wax authentique. Parfait pour toutes les occasions.', image: PlaceHolderImages.find(p => p.id === 'product-dress') },
+    { id: 3, name: 'Panier tressé', seller: 'Artisans de Goma', price: '15$', category: 'Artisanat', location: 'Goma, RDC', description: 'Panier robuste et décoratif, tressé à la main avec des matériaux locaux. Idéal pour le marché ou comme décoration intérieure.', image: PlaceHolderImages.find(p => p.id === 'product-basket') },
+    { id: 4, name: 'Miel de montagne', seller: 'Apiculteurs Virunga', price: '8$', category: 'Alimentaire', location: 'Parc des Virunga', description: 'Miel pur et biologique récolté dans les montagnes du parc national des Virunga. Un goût unique et sauvage.', image: PlaceHolderImages.find(p => p.id === 'product-honey') },
+    { id: 5, name: 'Smartphone d\'occasion - Tecno', seller: 'John D.', price: '80$', category: 'Électronique', location: 'Goma, RDC', description: 'Smartphone Tecno Spark en bon état. 64Go de stockage, 4Go de RAM. Vendu avec chargeur.', image: PlaceHolderImages.find(p => p.id === 'product-phone') },
+    { id: 6, name: 'Table basse en bois recyclé', seller: 'Menuiserie Ébène', price: '120$', category: 'Maison', location: 'Bukavu, RDC', description: 'Table basse unique fabriquée à partir de bois de palettes recyclées. Style rustique et moderne.', image: PlaceHolderImages.find(p => p.id === 'product-table') },
+    { id: 7, name: 'Sandales en cuir', seller: 'Cordonnerie du Lac', price: '25$', category: 'Mode', location: 'Goma, RDC', description: 'Sandales pour homme en cuir véritable, fabriquées à la main. Solides et confortables.', image: PlaceHolderImages.find(p => p.id === 'product-sandals') },
+    { id: 8, name: 'Peinture abstraite "Volcan"', seller: 'Artiste Maria', price: '200$', category: 'Artisanat', location: 'Goma, RDC', description: 'Toile originale inspirée par les couleurs du volcan Nyiragongo. Dimensions : 80x60cm.', image: PlaceHolderImages.find(p => p.id === 'product-painting') },
 ];
 
 export const jobs = [

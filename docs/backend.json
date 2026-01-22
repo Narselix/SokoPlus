@@ -25,10 +25,89 @@
         }
       },
       "required": ["name", "email", "role"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Represents a product listed on the marketplace.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the product."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the product."
+        },
+        "price": {
+          "type": "number",
+          "description": "The price of the product."
+        },
+        "category": {
+          "type": "string",
+          "description": "The category the product belongs to."
+        },
+        "location": {
+          "type": "string",
+          "description": "The location of the seller."
+        },
+        "sellerId": {
+          "type": "string",
+          "description": "The ID of the user selling the product."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "The URL of the product image."
+        }
+      },
+      "required": [
+        "name",
+        "price",
+        "category",
+        "sellerId"
+      ]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Represents an order placed by a user for a product.",
+      "type": "object",
+      "properties": {
+        "productId": {
+          "type": "string"
+        },
+        "buyerId": {
+          "type": "string"
+        },
+        "sellerId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "placed",
+            "confirmed",
+            "shipped",
+            "delivered",
+            "cancelled"
+          ]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "productId",
+        "buyerId",
+        "sellerId",
+        "status"
+      ]
     }
   },
   "auth": {
-    "providers": ["email_password"]
+    "providers": [
+      "email_password"
+    ]
   },
   "firestore": {
     "/users/{userId}": {
@@ -36,6 +115,18 @@
         "$ref": "#/entities/UserProfile"
       },
       "description": "Stores user profile information."
+    },
+    "/products/{productId}": {
+      "schema": {
+        "$ref": "#/entities/Product"
+      },
+      "description": "Stores product listings for the marketplace."
+    },
+    "/orders/{orderId}": {
+      "schema": {
+        "$ref": "#/entities/Order"
+      },
+      "description": "Stores user orders for marketplace products."
     }
   }
 }

@@ -15,13 +15,13 @@
     {
       "id": "product-dress",
       "description": "Dress product",
-      "imageUrl": "https://images.unsplash.com/photo-1664151100543-831e51069d1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhZnJpY2FuJTIwZHJlc3N8ZW58MHx8fHwxNzY5MDY0ODI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1638188350702-8d32baf1abfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhZnJpY2FuJTIwZHJlc3N8ZW58MHx8fHwxNzY5MDY0ODI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "african dress"
     },
     {
       "id": "product-basket",
       "description": "Basket product",
-      "imageUrl": "https://images.unsplash.com/photo-1566958339156-8ffbfb53acb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d292ZW4lMjBiYXNrZXR8ZW58MHx8fHwxNzY4OTg3MTM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1601241275518-7f6bd98aaf1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3b3ZlbiUyMGJhc2tldHxlbnwwfHx8fDE3Njg5ODcxMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woven basket"
     },
     {
@@ -31,51 +31,75 @@
       "imageHint": "honey jar"
     },
     {
+      "id": "product-phone",
+      "description": "Used phone",
+      "imageUrl": "https://images.unsplash.com/photo-1517404215738-15263e9f9178?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx1c2VkJTIwc21hcnRwaG9uZXxlbnwwfHx8fDE3Njg5OTI3Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "used smartphone"
+    },
+    {
+      "id": "product-table",
+      "description": "Recycled wood table",
+      "imageUrl": "https://images.unsplash.com/photo-1576506542790-51244b486a6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b29kJTIwdGFibGV8ZW58MHx8fHwxNzY4OTgzNjk3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wood table"
+    },
+    {
+      "id": "product-sandals",
+      "description": "Leather sandals",
+      "imageUrl": "https://images.unsplash.com/photo-1741783895531-ccc860eb946a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsZWF0aGVyJTIwc2FuZGFsc3xlbnwwfHx8fDE3NjkwNDI2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leather sandals"
+    },
+    {
+      "id": "product-painting",
+      "description": "Abstract painting",
+      "imageUrl": "https://images.unsplash.com/photo-1602464729960-f95937746b68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhYnN0cmFjdCUyMGFydHxlbnwwfHx8fDE3Njg5ODY2NDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract art"
+    },
+    {
       "id": "logo-tech",
       "description": "Tech company logo",
-      "imageUrl": "https://images.unsplash.com/photo-1662057168154-89300791ad6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3Njg5ODU2Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1605898643907-844c2bfc764e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3Njg5ODU2Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo"
     },
     {
       "id": "logo-marketing",
       "description": "Marketing agency logo",
-      "imageUrl": "https://images.unsplash.com/photo-1722891067479-5fd39edbfc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYXJrZXRpbmclMjBsb2dvfGVufDB8fHx8MTc2ODk4NDgyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1671599872868-b9fea0c6ee85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtYXJrZXRpbmclMjBsb2dvfGVufDB8fHx8MTc2ODk4NDgyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "marketing logo"
     },
     {
       "id": "logo-ong",
       "description": "NGO logo",
-      "imageUrl": "https://images.unsplash.com/photo-1750049790142-2db418e5745c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxuZ28lMjBsb2dvfGVufDB8fHx8MTc2OTA2NDgyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1574003887216-5d32ce5f22fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxuZ28lMjBsb2dvfGVufDB8fHx8MTc2OTA2NDgyOHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "ngo logo"
     },
     {
       "id": "solidarity-school",
       "description": "School children for solidarity campaign",
-      "imageUrl": "https://images.unsplash.com/photo-1581726707445-75cbe4efc586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzY2hvb2wlMjBjaGlsZHJlbnxlbnwwfHx8fDE3NjkwMTI0MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzY2hvb2wlMjBjaGlsZHJlbnxlbnwwfHx8fDE3NjkwMTI0MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "school children"
     },
     {
       "id": "solidarity-water",
       "description": "Clean water for solidarity campaign",
-      "imageUrl": "https://images.unsplash.com/photo-1559079236-2e64f89c7764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjbGVhbiUyMHdhdGVyfGVufDB8fHx8MTc2OTAzNTYxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1542013936693-884638332954?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2xlYW4lMjB3YXRlcnxlbnwwfHx8fDE3NjkwMzU2MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "clean water"
     },
     {
       "id": "solidarity-microcredit",
       "description": "Microcredit for solidarity campaign",
-      "imageUrl": "https://images.unsplash.com/photo-1449247666642-264389f5f5b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzbWFsbCUyMGJ1c2luZXNzfGVufDB8fHx8MTc2ODk4Nzk4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1594402919317-9e67dca0a305?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzbWFsbCUyMGJ1c2luZXNzfGVufDB8fHx8MTc2ODk4Nzk4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "small business"
     },
     {
       "id": "pharma-paracetamol",
       "description": "Paracetamol box",
-      "imageUrl": "https://images.unsplash.com/photo-1648712788983-11311123c622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2luZSUyMGJveHxlbnwwfHx8fDE3NjkwNjQ4Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1563213126-a4273aed2016?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZWRpY2luZSUyMGJveHxlbnwwfHx8fDE3NjkwNjQ4Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "medicine box"
     },
     {
       "id": "pharma-syrup",
       "description": "Syrup bottle",
-      "imageUrl": "https://images.unsplash.com/photo-1592272072940-cde40abbadfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzeXJ1cCUyMGJvdHRsZXxlbnwwfHx8fDE3NjkwMDM3NTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1717250181007-bbf2097ced93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzeXJ1cCUyMGJvdHRsZXxlbnwwfHx8fDE3NjkwMDM3NTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "syrup bottle"
     },
     {
@@ -87,13 +111,13 @@
     {
       "id": "pharma-vitamins",
       "description": "Vitamins bottle",
-      "imageUrl": "https://images.unsplash.com/photo-1687200267887-e334037363f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx2aXRhbWlucyUyMGJvdHRsZXxlbnwwfHx8fDE3Njg5NDgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1687200266857-764ef12cfdd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx2aXRhbWlucyUyMGJvdHRsZXxlbnwwfHx8fDE3Njg5NDgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "vitamins bottle"
     },
     {
       "id": "wellbeing-stress",
       "description": "Stress management article",
-      "imageUrl": "https://images.unsplash.com/photo-1631963137006-7c6d5f103ba2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjYWxtJTIwbWVkaXRhdGlvbnxlbnwwfHx8fDE3Njg5NjUxNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1631962758485-3fd6ab86e14a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWVkaXRhdGlvbnxlbnwwfHx8fDE3Njg5NjUxNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "calm meditation"
     },
     {
