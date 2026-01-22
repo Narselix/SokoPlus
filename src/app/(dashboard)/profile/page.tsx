@@ -27,7 +27,7 @@ import { FirestorePermissionError } from "@/firebase/errors";
 const profileSchema = z.object({
   name: z.string().min(1, "Le nom est requis."),
   email: z.string().email("L'email est invalide."),
-  role: z.enum(["User", "Seller", "Trainer", "Recruiter", "Pharmacist", "Admin"]),
+  role: z.enum(["Student", "Teacher", "Admin"]),
 });
 
 export default function ProfilePage() {
@@ -40,7 +40,7 @@ export default function ProfilePage() {
         defaultValues: {
             name: "",
             email: "",
-            role: "User",
+            role: "Student",
         }
     });
 
@@ -55,7 +55,7 @@ export default function ProfilePage() {
             form.reset({
                 name: user.displayName || "",
                 email: user.email || "",
-                role: "User",
+                role: "Student",
             });
         }
     }, [user, userProfile, form]);
@@ -162,12 +162,9 @@ export default function ProfilePage() {
                             <SelectValue placeholder="Sélectionnez un rôle" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="User">Utilisateur simple</SelectItem>
-                            <SelectItem value="Seller">Vendeur</SelectItem>
-                            <SelectItem value="Trainer">Formateur</SelectItem>
-                            <SelectItem value="Recruiter">Recruteur</SelectItem>
-                            <SelectItem value="Pharmacist">Pharmacien</SelectItem>
-                            <SelectItem value="Admin">Admin</SelectItem>
+                            <SelectItem value="Student">Apprenant(e)</SelectItem>
+                            <SelectItem value="Teacher">Enseignant(e)</SelectItem>
+                            <SelectItem value="Admin">Administrateur</SelectItem>
                         </SelectContent>
                     </Select>
                 )}

@@ -3,20 +3,8 @@
     {
       "id": "landing-hero",
       "description": "Hero image for the landing page",
-      "imageUrl": "https://images.unsplash.com/photo-1768321612322-9e05b91ee8c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb21tdW5pdHklMjBtYXJrZXR8ZW58MHx8fHwxNzY4ODExNTEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "community market"
-    },
-    {
-      "id": "user-avatar-1",
-      "description": "User avatar 1",
-      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3Njg3ODY3NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "man portrait"
-    },
-    {
-      "id": "user-avatar-2",
-      "description": "User avatar 2",
-      "imageUrl": "https://images.unsplash.com/photo-1557053910-d9eadeed1c58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2ODc2MDg2NHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "woman portrait"
+      "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxlYXJuaW5nfGVufDB8fHx8MTc2ODgxMTUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students learning"
     },
     {
       "id": "course-1",
@@ -43,88 +31,10 @@
       "imageHint": "code screen"
     },
     {
-      "id": "product-1",
-      "description": "Handmade basket",
-      "imageUrl": "https://images.unsplash.com/photo-1622701893201-9bc9eb616690?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYW5kbWFkZSUyMGJhc2tldHxlbnwwfHx8fDE3Njg4MTE1MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "handmade basket"
-    },
-    {
-      "id": "product-2",
-      "description": "Local coffee beans",
-      "imageUrl": "https://images.unsplash.com/photo-1606486544554-164d98da4889?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb2ZmZWUlMjBiZWFuc3xlbnwwfHx8fDE3Njg3MzE5MjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "coffee beans"
-    },
-    {
-      "id": "product-3",
-      "description": "Tailored fabric",
-      "imageUrl": "https://images.unsplash.com/photo-1529245019870-59b249281fd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhZnJpY2FuJTIwZmFicmljfGVufDB8fHx8MTc2ODgxMTUxMXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "african fabric"
-    },
-    {
-      "id": "product-4",
-      "description": "Carved wooden statue",
-      "imageUrl": "https://images.unsplash.com/photo-1470342495351-a5f90c5011cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b29kJTIwY2FydmluZ3xlbnwwfHx8fDE3Njg3NTU0MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "wood carving"
-    },
-    {
-      "id": "company-logo-1",
-      "description": "Tech company logo",
-      "imageUrl": "https://images.unsplash.com/photo-1754838880357-60c7c468180f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhYnN0cmFjdCUyMGxvZ298ZW58MHx8fHwxNzY4NzcxNzUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "abstract logo"
-    },
-    {
-      "id": "company-logo-2",
-      "description": "NGO logo",
-      "imageUrl": "https://images.unsplash.com/photo-1584441405886-bc91be61e56a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGFyaXR5JTIwbG9nb3xlbnwwfHx8fDE3Njg4MTE1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "charity logo"
-    },
-    {
-      "id": "pharmacy-1",
-      "description": "Generic pills",
-      "imageUrl": "https://images.unsplash.com/photo-1668453569370-789848f41ebe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtZWRpY2luZSUyMHBpbGxzfGVufDB8fHx8MTc2ODcyNDY5M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "medicine pills"
-    },
-    {
-      "id": "pharmacy-2",
-      "description": "Syrup bottle",
-      "imageUrl": "https://images.unsplash.com/photo-1617800553712-2db4ebd9d908?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb3VnaCUyMHN5cnVwfGVufDB8fHx8MTc2ODgxMTUxMXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "cough syrup"
-    },
-    {
-      "id": "pharmacy-3",
-      "description": "First aid kit",
-      "imageUrl": "https://images.unsplash.com/photo-1566889035559-b14ef9d4c365?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmaXJzdC1haWQlMjBraXR8ZW58MHx8fHwxNzY4ODExNTExfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "first-aid kit"
-    },
-    {
-      "id": "solidarity-1",
-      "description": "Community building project",
-      "imageUrl": "https://images.unsplash.com/photo-1652257975351-090e0b9cf8c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21tdW5pdHklMjB3b3JraW5nfGVufDB8fHx8MTc2ODgxMTUxMXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "community working"
-    },
-    {
-      "id": "solidarity-2",
-      "description": "Food drive",
-      "imageUrl": "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmb29kJTIwZG9uYXRpb258ZW58MHx8fHwxNzY4ODExNTExfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "food donation"
-    },
-    {
-      "id": "solidarity-3",
-      "description": "Support for displaced families",
-      "imageUrl": "https://images.unsplash.com/photo-1518062304627-5532ae8c3ff2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyZWZ1Z2VlJTIwY2FtcHxlbnwwfHx8fDE3Njg4MTE1MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "refugee camp"
-    },
-    {
-      "id": "well-being-1",
-      "description": "Article on mental health",
-      "imageUrl": "https://images.unsplash.com/photo-1717733812723-543792d9e74e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbmF0dXJlfGVufDB8fHx8MTc2ODgxMTUxMXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "calm nature"
-    },
-    {
-      "id": "well-being-2",
-      "description": "Article on community support",
-      "imageUrl": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzdXBwb3J0JTIwZ3JvdXB8ZW58MHx8fHwxNzY4ODExNTExfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "support group"
+      "id": "certificate",
+      "description": "A certificate of completion",
+      "imageUrl": "https://images.unsplash.com/photo-1761671613933-159512988cb3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjZXJ0aWZpY2F0ZSUyMGRvY3VtZW50fGVufDB8fHx8MTc2ODk5NTA5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "certificate document"
     }
   ]
 }

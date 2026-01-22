@@ -60,7 +60,7 @@ export default function SignupPage() {
       const userData = {
         name: values.name,
         email: values.email,
-        role: "User", // Default role
+        role: "Student", // Default role
       };
 
       setDoc(userRef, userData)
@@ -77,7 +77,7 @@ export default function SignupPage() {
         title: "Compte créé",
         description: "Votre compte a été créé avec succès.",
       });
-      router.push("/profile");
+      router.push("/");
     } catch (error: any) {
       toast({
         variant: "destructive",
@@ -92,7 +92,7 @@ export default function SignupPage() {
       <CardHeader>
         <CardTitle className="text-2xl font-headline">Créer un compte</CardTitle>
         <CardDescription>
-          Créez votre compte pour accéder à l'écosystème Soko+.
+          Créez votre compte pour accéder à la plateforme Shule.
         </CardDescription>
       </CardHeader>
       <Form {...form}>

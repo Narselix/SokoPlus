@@ -52,7 +52,7 @@ export default function LoginPage() {
         title: "Connexion réussie",
         description: "Vous êtes maintenant connecté.",
       });
-      router.push("/profile");
+      router.push("/");
     } catch (error: any) {
       toast({
         variant: "destructive",
@@ -67,7 +67,7 @@ export default function LoginPage() {
       <CardHeader>
         <CardTitle className="text-2xl font-headline">Connexion</CardTitle>
         <CardDescription>
-          Entrez votre email pour vous connecter à votre compte.
+          Entrez votre email pour vous connecter à votre compte Shule.
         </CardDescription>
       </CardHeader>
       <Form {...form}>

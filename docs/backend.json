@@ -18,11 +18,8 @@
           "type": "string",
           "description": "The user's role in the application.",
           "enum": [
-            "User",
-            "Seller",
-            "Trainer",
-            "Recruiter",
-            "Pharmacist",
+            "Student",
+            "Teacher",
             "Admin"
           ]
         }

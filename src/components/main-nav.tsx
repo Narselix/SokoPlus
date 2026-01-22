@@ -8,16 +8,11 @@ import {
   SidebarMenuButton,
 } from "@/components/ui/sidebar";
 import {
-  Briefcase,
-  GraduationCap,
-  HeartPulse,
+  BookCopy,
   LayoutDashboard,
-  ShoppingCart,
-  Smile,
-  Users,
-  Wand2,
+  Award,
 } from "lucide-react";
-import { SokoPlusLogo } from "./icons";
+import { ShuleLogo } from "./icons";
 
 const links = [
   {
@@ -26,39 +21,14 @@ const links = [
     icon: LayoutDashboard,
   },
   {
-    href: "/education",
-    label: "Éducation",
-    icon: GraduationCap,
+    href: "/courses",
+    label: "Cours",
+    icon: BookCopy,
   },
   {
-    href: "/market",
-    label: "Marché",
-    icon: ShoppingCart,
-  },
-  {
-    href: "/jobs",
-    label: "Emploi",
-    icon: Briefcase,
-  },
-  {
-    href: "/pharmacy",
-    label: "Pharmacie",
-    icon: HeartPulse,
-  },
-  {
-    href: "/solidarity",
-    label: "Solidarité",
-    icon: Users,
-  },
-  {
-    href: "/well-being",
-    label: "Bien-être",
-    icon: Smile,
-  },
-  {
-    href: "/recommendations",
-    label: "Recommandations IA",
-    icon: Wand2,
+    href: "/certificates",
+    label: "Certificats",
+    icon: Award,
   },
 ];
 
@@ -68,8 +38,8 @@ export function MainNav() {
   return (
     <div className="flex flex-col h-full">
         <div className="p-4 flex items-center gap-2">
-            <SokoPlusLogo className="h-8 w-8 text-primary" />
-            <span className="font-headline text-xl font-bold group-data-[collapsible=icon]:hidden">Soko+</span>
+            <ShuleLogo className="h-8 w-8 text-primary" />
+            <span className="font-headline text-xl font-bold group-data-[collapsible=icon]:hidden">Shule</span>
         </div>
 
         <SidebarMenu className="flex-1 p-2">
