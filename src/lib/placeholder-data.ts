@@ -1,8 +1,15 @@
 import { PlaceHolderImages } from './placeholder-images';
 
-export const courses: any[] = [];
+export const courses = [
+    { id: 1, title: 'Introduction au Marketing Digital', teacher: 'John Doe', category: 'Marketing', level: 'Débutant', duration: '4 semaines', progress: 60, image: PlaceHolderImages.find(p => p.id === 'course-marketing'), description: 'Apprenez les bases du marketing digital, du SEO au marketing par e-mail.', modules: [{id: 1, title: "Module 1", lessons: [{id: 1, title: "Leçon 1", duration: "10min", completed: true}]}]},
+    { id: 2, title: 'Les Fondamentaux de l\'Entrepreneuriat', teacher: 'Jane Smith', category: 'Business', level: 'Débutant', duration: '6 semaines', progress: 30, image: PlaceHolderImages.find(p => p.id === 'course-business'), description: 'De l\'idée au plan d\'affaires, lancez votre entreprise avec succès.', modules: [] },
+    { id: 3, title: 'Design Graphique pour Débutants', teacher: 'Emily White', category: 'Design', level: 'Débutant', duration: '5 semaines', progress: 0, image: PlaceHolderImages.find(p => p.id === 'course-design'), description: 'Maîtrisez les bases du design graphique avec des outils comme Canva et Figma.', modules: [] },
+    { id: 4, title: 'Développement Web avec React', teacher: 'Chris Green', category: 'Tech', level: 'Intermédiaire', duration: '8 semaines', progress: 0, image: PlaceHolderImages.find(p => p.id === 'course-tech'), description: 'Construisez des applications web modernes et interactives avec React.', modules: [] },
+];
 
-export const certificates: any[] = [];
+export const certificates = [
+    { id: 1, courseTitle: 'Introduction au Marketing Digital', date: '12 Juin 2024', image: PlaceHolderImages.find(p => p.id === 'certificate-marketing') },
+];
 
 export const products = [
     { id: 1, name: 'Café du Kivu', seller: 'Coopérative des fermiers', price: '10$', category: 'Alimentaire', location: 'Goma, RDC', description: 'Un café Arabica de haute qualité cultivé sur les pentes fertiles des volcans du Kivu. Notes de dégustation : chocolat, agrumes, et une touche florale.', image: PlaceHolderImages.find(p => p.id === 'product-coffee') },

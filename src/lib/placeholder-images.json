@@ -7,6 +7,36 @@
       "imageHint": "students learning"
     },
     {
+      "id": "course-marketing",
+      "description": "Marketing course cover",
+      "imageUrl": "https://images.unsplash.com/photo-1557862921-37829c790f19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYXJrZXRpbmclMjBjb3Vyc2V8ZW58MHx8fHwxNzY4OTc4MjYwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "marketing course"
+    },
+    {
+      "id": "course-business",
+      "description": "Business course cover",
+      "imageUrl": "https://images.unsplash.com/photo-1573497491208-6b1acb260507?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGNvdXJzZXxlbnwwfHx8fDE3NjkwMjc4MTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business course"
+    },
+    {
+      "id": "course-design",
+      "description": "Design course cover",
+      "imageUrl": "https://images.unsplash.com/photo-1626785774573-4b799315345d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxncmFwaGljJTIwZGVzaWduJTIwY291cnNlfGVufDB8fHx8MTc2ODk5NDk2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "graphic design"
+    },
+    {
+      "id": "course-tech",
+      "description": "Tech course cover",
+      "imageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2RpbmclMjBjb3Vyc2V8ZW58MHx8fHwxNzY5MDAzOTM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coding course"
+    },
+    {
+      "id": "certificate-marketing",
+      "description": "Marketing certificate",
+      "imageUrl": "https://images.unsplash.com/photo-1620912189836-121b65b6c68a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjZXJ0aWZpY2F0ZSUyMGJvcmRlcnxlbnwwfHx8fDE3NjkwNjQ4Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "certificate border"
+    },
+    {
       "id": "product-coffee",
       "description": "Coffee product",
       "imageUrl": "https://images.unsplash.com/photo-1690983326555-8b8e27843a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb2ZmZWUlMjBiZWFuc3xlbnwwfHx8fDE3NjkwNDc4OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
