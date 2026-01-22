@@ -16,9 +16,9 @@ export const products = [
 ];
 
 export const jobs = [
-    { id: 1, title: 'Développeur Web Full-Stack', company: 'Startup Tech Goma', location: 'Goma, RDC', type: 'Temps plein', tags: ['React', 'Node.js', 'Firebase'], logo: PlaceHolderImages.find(p => p.id === 'logo-tech') },
-    { id: 2, title: 'Assistant Marketing Digital', company: 'Agence ComKivu', location: 'Bukavu, RDC', type: 'Stage', tags: ['SEO', 'Réseaux sociaux'], logo: PlaceHolderImages.find(p => p.id === 'logo-marketing') },
-    { id: 3, title: 'Traduction (Français - Swahili)', company: 'ONG locale', location: 'Télétravail', type: 'Freelance', tags: ['Traduction', 'Social'], logo: PlaceHolderImages.find(p => p.id === 'logo-ong') },
+    { id: 1, title: 'Développeur Web Full-Stack', company: 'Startup Tech Goma', location: 'Goma, RDC', type: 'Temps plein', tags: ['React', 'Node.js', 'Firebase'], logo: PlaceHolderImages.find(p => p.id === 'logo-tech'), description: 'Nous recherchons un développeur full-stack passionné pour rejoindre notre équipe à Goma. Vous travaillerez sur des projets innovants qui ont un impact direct sur la communauté locale, en utilisant les dernières technologies comme React, Node.js, et Firebase. Expérience souhaitée : 2 ans minimum.' },
+    { id: 2, title: 'Assistant Marketing Digital', company: 'Agence ComKivu', location: 'Bukavu, RDC', type: 'Stage', tags: ['SEO', 'Réseaux sociaux'], logo: PlaceHolderImages.find(p => p.id === 'logo-marketing'), description: 'Stage de 6 mois pour un étudiant ou jeune diplômé en marketing. Vous participerez à la création de campagnes digitales, à la gestion de nos réseaux sociaux et à l\'analyse des performances. C\'est une excellente opportunité d\'apprendre auprès d\'experts.' },
+    { id: 3, title: 'Traduction (Français - Swahili)', company: 'ONG locale', location: 'Télétravail', type: 'Freelance', tags: ['Traduction', 'Social'], logo: PlaceHolderImages.find(p => p.id === 'logo-ong'), description: 'Mission freelance pour traduire des documents importants relatifs à nos projets sociaux dans la région. Une parfaite maîtrise du français et du swahili, ainsi qu\'une sensibilité culturelle, sont exigées. Mission ponctuelle avec possibilité de collaboration à long terme.' },
 ];
 
 export const solidarityCampaigns = [
