@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,34 +10,44 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function CoursesPage() {
+  const enrolledCourses = courses.filter(course => course.progress > 0);
   const categories = ["Tous", "Mathématiques", "Science", "Droit", "Histoire", "Tech", "Business", "Littérature"];
 
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight font-headline">Catalogue des Cours</h1>
-        <p className="text-muted-foreground">Trouvez la formation parfaite pour développer vos compétences.</p>
+        <h1 className="text-3xl font-bold tracking-tight font-headline">Mes Cours</h1>
+        <p className="text-muted-foreground">Continuez votre parcours d'apprentissage et suivez votre progression.</p>
       </div>
 
-      <Tabs defaultValue="Tous" className="space-y-4">
-        <TabsList>
-            {categories.map(category => (
-                <TabsTrigger key={category} value={category}>{category}</TabsTrigger>
-            ))}
-        </TabsList>
-        <TabsContent value="Tous" className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {courses.map((course) => (
-                <CourseCard key={course.id} course={course} />
-            ))}
-        </TabsContent>
-        {categories.slice(1).map(category => (
-            <TabsContent key={category} value={category} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {courses.filter(c => c.category === category).map((course) => (
-                    <CourseCard key={course.id} course={course} />
-                ))}
-            </TabsContent>
-        ))}
-      </Tabs>
+      {enrolledCourses.length > 0 ? (
+        <Tabs defaultValue="Tous" className="space-y-4">
+          <TabsList>
+              {categories.map(category => (
+                  <TabsTrigger key={category} value={category}>{category}</TabsTrigger>
+              ))}
+          </TabsList>
+          <TabsContent value="Tous" className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {enrolledCourses.map((course) => (
+                  <CourseCard key={course.id} course={course} />
+              ))}
+          </TabsContent>
+          {categories.slice(1).map(category => (
+              <TabsContent key={category} value={category} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  {enrolledCourses.filter(c => c.category === category).map((course) => (
+                      <CourseCard key={course.id} course={course} />
+                  ))}
+              </TabsContent>
+          ))}
+        </Tabs>
+      ) : (
+        <div className="text-center py-12 border-2 border-dashed rounded-lg">
+            <p className="text-muted-foreground mb-4">Vous n'êtes inscrit à aucun cours pour le moment.</p>
+            <Button asChild>
+                <Link href="/education">Explorer le catalogue</Link>
+            </Button>
+        </div>
+      )}
     </div>
   );
 }
@@ -77,5 +89,3 @@ function CourseCard({ course }: { course: (typeof courses)[0] }) {
     </Card>
   );
 }
-
-    

@@ -45,8 +45,18 @@ export default function LandingPage() {
       </header>
 
       <main className="flex-grow">
-        <section className="relative py-20 md:py-32 bg-secondary/30">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative bg-secondary/30">
+          {heroImage && (
+            <Image
+              src={heroImage.imageUrl}
+              alt={heroImage.description}
+              fill
+              className="object-cover object-center opacity-20"
+              data-ai-hint={heroImage.imageHint}
+              priority
+            />
+          )}
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 md:py-32">
             <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tight text-foreground">
               L'écosystème qui connecte le Kivu.
             </h1>
