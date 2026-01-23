@@ -31,6 +31,48 @@
       "imageHint": "coding course"
     },
     {
+      "id": "course-math-primary",
+      "description": "Primary school math course",
+      "imageUrl": "https://images.unsplash.com/photo-1509228468518-180dd4864904?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGFsa2JvYXJkJTIwbWF0aHxlbnwwfHx8fDE3NjkyMTAyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chalkboard math"
+    },
+    {
+      "id": "course-biology-secondary",
+      "description": "Secondary school biology course",
+      "imageUrl": "https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtaWNyb3Njb3BlJTIwYmlvbG9neXxlbnwwfHx8fDE3NjkyMTAyMzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "microscope biology"
+    },
+    {
+      "id": "course-law-university",
+      "description": "University law course",
+      "imageUrl": "https://images.unsplash.com/photo-1589998059171-988d887df646?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYXclMjBib29rc3xlbnwwfHx8fDE3NjkyMTAyMzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "law books"
+    },
+    {
+      "id": "course-history",
+      "description": "History course",
+      "imageUrl": "https://images.unsplash.com/photo-1524135220673-c731600a1a52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoaXN0b3JpY2FsJTIwbWFwfGVufDB8fHx8MTc2OTIxMDIzMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "historical map"
+    },
+    {
+      "id": "course-chemistry",
+      "description": "Chemistry course",
+      "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGVtaXN0cnklMjBiZWFrZXJzfGVufDB8fHx8MTc2OTIxMDIzMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chemistry beakers"
+    },
+    {
+      "id": "course-literature",
+      "description": "Literature course",
+      "imageUrl": "https://images.unsplash.com/photo-1524995767962-b1fdedb6b142?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbGFzc2ljJTIwYm9va3N8ZW58MHx8fHwxNzY5MjEwMjMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "classic books"
+    },
+    {
+      "id": "course-economics",
+      "description": "Economics course",
+      "imageUrl": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdG9jayUyMGNoYXJ0fGVufDB8fHx8MTc2OTIxMDIzMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "stock chart"
+    },
+    {
       "id": "certificate-marketing",
       "description": "Marketing certificate",
       "imageUrl": "https://images.unsplash.com/photo-1620912189836-121b65b6c68a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjZXJ0aWZpY2F0ZSUyMGJvcmRlcnxlbnwwfHx8fDE3NjkwNjQ4Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080",

@@ -1,6 +1,128 @@
 import { PlaceHolderImages } from './placeholder-images';
 
 export const courses = [
+    { 
+        id: 1, 
+        title: 'Mathématiques de Base (Primaire)', 
+        description: "Apprenez les bases de l'addition, de la soustraction, de la multiplication et de la division de manière ludique.",
+        category: 'Mathématiques',
+        level: 'Débutant',
+        duration: '15 Heures',
+        teacher: 'Mme. Anifa',
+        progress: 0,
+        image: PlaceHolderImages.find(p => p.id === 'course-math-primary'),
+        modules: [
+            { id: 1, title: 'Module 1: Addition et Soustraction', lessons: [
+                { id: 1, title: 'Introduction à l\'addition', duration: '20 min', completed: false },
+                { id: 2, title: 'Pratiquer la soustraction', duration: '25 min', completed: false },
+                { id: 3, title: 'Problèmes simples', duration: '30 min', completed: false },
+            ]},
+            { id: 2, title: 'Module 2: Multiplication et Division', lessons: [
+                { id: 4, title: 'Les tables de multiplication', duration: '20 min', completed: false },
+                { id: 5, title: 'Introduction à la division', duration: '25 min', completed: false },
+                { id: 6, title: 'Exercices pratiques', duration: '30 min', completed: false },
+            ]},
+        ]
+    },
+    { 
+        id: 2, 
+        title: 'Introduction à la Biologie (Secondaire)', 
+        description: "Découvrez le monde fascinant du vivant, de la cellule aux écosystèmes.",
+        category: 'Science',
+        level: 'Débutant',
+        duration: '25 Heures',
+        teacher: 'Mr. Baraka',
+        progress: 25,
+        image: PlaceHolderImages.find(p => p.id === 'course-biology-secondary'),
+        modules: [
+             { id: 1, title: 'Module 1: La Cellule', lessons: [
+                { id: 1, title: 'Qu\'est-ce qu\'une cellule ?', duration: '30 min', completed: true },
+                { id: 2, title: 'Cellules animales vs végétales', duration: '35 min', completed: true },
+                { id: 3, title: 'La division cellulaire', duration: '40 min', completed: false },
+             ]},
+             { id: 2, title: 'Module 2: Le Corps Humain', lessons: [
+                { id: 4, title: 'Le système digestif', duration: '30 min', completed: false },
+                { id: 5, title: 'Le système respiratoire', duration: '30 min', completed: false },
+             ]},
+        ]
+    },
+    { 
+        id: 3, 
+        title: 'Droit Constitutionnel (Université)', 
+        description: "Comprenez les principes fondamentaux qui régissent l'État et les institutions.",
+        category: 'Droit',
+        level: 'Intermédiaire',
+        duration: '40 Heures',
+        teacher: 'Prof. Ndeko',
+        progress: 0,
+        image: PlaceHolderImages.find(p => p.id === 'course-law-university'),
+        modules: []
+    },
+    { 
+        id: 4, 
+        title: 'Histoire du Congo : Des Origines à Nos Jours', 
+        description: "Un voyage à travers le temps pour comprendre l'histoire riche et complexe de la République Démocratique du Congo.",
+        category: 'Histoire',
+        level: 'Tous niveaux',
+        duration: '30 Heures',
+        teacher: 'Dr. Zawadi',
+        progress: 10,
+        image: PlaceHolderImages.find(p => p.id === 'course-history'),
+        modules: [
+             { id: 1, title: 'Module 1: Période pré-coloniale', lessons: [
+                { id: 1, title: 'Les grands royaumes', duration: '45 min', completed: true },
+                { id: 2, title: 'Les routes commerciales', duration: '40 min', completed: false },
+             ]},
+        ]
+    },
+    { 
+        id: 5, 
+        title: 'Développement Web : Devenez Full-Stack', 
+        description: "Apprenez les bases du HTML, CSS, JavaScript et construisez vos premières applications web interactives.",
+        category: 'Tech',
+        level: 'Débutant',
+        duration: '50 Heures',
+        teacher: 'Mr. Patrick',
+        progress: 75,
+        image: PlaceHolderImages.find(p => p.id === 'course-tech'),
+        modules: []
+    },
+    { 
+        id: 6, 
+        title: 'Principes de Chimie Générale', 
+        description: "Explorez les atomes, les molécules, les réactions chimiques et les lois fondamentales de la chimie.",
+        category: 'Science',
+        level: 'Intermédiaire',
+        duration: '35 Heures',
+        teacher: 'Mme. Amani',
+        progress: 0,
+        image: PlaceHolderImages.find(p => p.id === 'course-chemistry'),
+        modules: []
+    },
+    { 
+        id: 7, 
+        title: "Littérature Francophone d'Afrique", 
+        description: "Découvrez les auteurs majeurs et les grands courants de la littérature africaine d'expression française.",
+        category: 'Littérature',
+        level: 'Avancé',
+        duration: '45 Heures',
+        teacher: 'Prof. Lema',
+        progress: 0,
+        image: PlaceHolderImages.find(p => p.id === 'course-literature'),
+        modules: []
+    },
+    { 
+        id: 8, 
+        title: "Introduction à l'Économie", 
+        description: "Maîtrisez les concepts de base de la microéconomie et de la macroéconomie pour mieux comprendre le monde qui vous entoure.",
+        category: 'Business',
+        level: 'Débutant',
+        duration: '20 Heures',
+        teacher: 'Mr. David',
+        progress: 0,
+        image: PlaceHolderImages.find(p => p.id === 'course-economics'),
+        modules: []
+    },
 ];
 
 export const certificates = [
@@ -54,3 +176,5 @@ export const aiPicks = {
     availableJobListings: "Développeur Web Full-Stack, Assistant Marketing Digital, Traduction (Français - Swahili)",
     availableSolidarityCampaigns: "Scolarisation des enfants de Masisi, Accès à l'eau potable à Minova, Soutien aux micro-entrepreneurs",
 }
+
+    

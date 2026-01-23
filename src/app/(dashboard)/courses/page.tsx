@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function CoursesPage() {
-  const categories = ["Tous", "Marketing", "Business", "Design", "Tech"];
+  const categories = ["Tous", "Mathématiques", "Science", "Droit", "Histoire", "Tech", "Business", "Littérature"];
 
   return (
     <div className="space-y-8">
@@ -77,3 +77,5 @@ function CourseCard({ course }: { course: (typeof courses)[0] }) {
     </Card>
   );
 }
+
+    
