@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { wellBeingArticles } from "@/lib/placeholder-data";
+import { Video } from "lucide-react";
 
 export default function WellBeingPage() {
   return (
@@ -11,14 +13,30 @@ export default function WellBeingPage() {
         <p className="text-muted-foreground">Des ressources pour votre soutien psychologique et bien-être.</p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <Card className="md:col-span-2 lg:col-span-3 bg-accent/50">
+      <div className="grid gap-6 md:grid-cols-2">
+        <Card className="bg-accent/50 flex flex-col">
             <CardHeader>
                 <CardTitle className="font-headline">Espace d'expression anonyme</CardTitle>
                 <CardDescription>Partagez vos pensées ou lisez les messages de soutien de la communauté. Un espace sûr et anonyme.</CardDescription>
             </CardHeader>
+            <CardContent className="flex-grow" />
             <CardFooter>
                 <Button>Participer à la discussion</Button>
+            </CardFooter>
+        </Card>
+        <Card className="bg-accent/50 flex flex-col">
+            <CardHeader>
+                <CardTitle className="font-headline">Sessions d'écoute en ligne</CardTitle>
+                <CardDescription>Rejoignez des sessions d'écoute individuelles ou de groupe par appel vidéo ou vocal.</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-grow" />
+            <CardFooter>
+                <Button asChild>
+                    <Link href="/well-being/sessions">
+                        <Video className="mr-2 h-4 w-4"/>
+                        Rejoindre une session
+                    </Link>
+                </Button>
             </CardFooter>
         </Card>
       </div>
