@@ -1,9 +1,11 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { wellBeingArticles } from "@/lib/placeholder-data";
-import { Video } from "lucide-react";
+import { Video, PlusCircle } from "lucide-react";
 
 export default function WellBeingPage() {
   return (
@@ -21,7 +23,9 @@ export default function WellBeingPage() {
             </CardHeader>
             <CardContent className="flex-grow" />
             <CardFooter>
-                <Button>Participer à la discussion</Button>
+                <Button asChild>
+                    <Link href="/well-being/forum">Participer à la discussion</Link>
+                </Button>
             </CardFooter>
         </Card>
         <Card className="bg-accent/50 flex flex-col">
@@ -42,7 +46,15 @@ export default function WellBeingPage() {
       </div>
       
       <div>
-        <h2 className="text-2xl font-bold tracking-tight font-headline mb-4">Articles & Conseils</h2>
+        <div className="flex justify-between items-center mb-4">
+            <h2 className="text-2xl font-bold tracking-tight font-headline">Articles & Conseils</h2>
+            <Button asChild>
+                <Link href="/well-being/publish-article">
+                    <PlusCircle className="mr-2 h-4 w-4" />
+                    Ajouter un article
+                </Link>
+            </Button>
+        </div>
         <div className="grid gap-6 md:grid-cols-2">
             {wellBeingArticles.map((article) => (
                 <Card key={article.id} className="flex flex-col md:flex-row h-full overflow-hidden hover:shadow-lg transition-shadow duration-300">
