@@ -3,6 +3,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { solidarityCampaigns } from "@/lib/placeholder-data";
+import { Badge } from "@/components/ui/badge";
+import { MapPin } from "lucide-react";
 
 export default function SolidarityPage() {
   return (
@@ -34,6 +36,10 @@ export default function SolidarityPage() {
                 <CardDescription>Par : {campaign.organizer}</CardDescription>
             </CardHeader>
             <CardContent className="p-4 pt-0 flex-grow">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                    <Badge variant="secondary">{campaign.category}</Badge>
+                    <span className="flex items-center gap-1"><MapPin className="h-4 w-4" /> {campaign.location}</span>
+                </div>
                 <div className="space-y-2">
                     <Progress value={campaign.progress} className="h-2" />
                     <div className="flex justify-between text-sm">
