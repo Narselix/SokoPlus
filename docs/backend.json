@@ -191,6 +191,32 @@
         "vehicle",
         "location"
       ]
+    },
+    "AdministrativeProcedure": {
+      "title": "Administrative Procedure",
+      "description": "Represents an official administrative procedure.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "requiredDocuments": { "type": "array", "items": { "type": "string" } },
+        "estimatedCost": { "type": "string" },
+        "estimatedTime": { "type": "string" }
+      },
+      "required": ["title", "category", "description"]
+    },
+    "PublicAlert": {
+      "title": "Public Alert",
+      "description": "Represents a public alert or information bulletin.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "category": { "type": "string", "enum": ["Sécurité", "Santé", "Circulation", "Info Locale"] },
+        "content": { "type": "string" },
+        "publishedDate": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "category", "content", "publishedDate"]
     }
   },
   "auth": {
@@ -228,6 +254,14 @@
         "$ref": "#/entities/Transport"
       },
       "description": "Stores transport service listings."
+    },
+    "/adminProcedures/{procedureId}": {
+      "schema": { "$ref": "#/entities/AdministrativeProcedure" },
+      "description": "Stores administrative procedures."
+    },
+    "/publicAlerts/{alertId}": {
+      "schema": { "$ref": "#/entities/PublicAlert" },
+      "description": "Stores public alerts."
     }
   }
 }

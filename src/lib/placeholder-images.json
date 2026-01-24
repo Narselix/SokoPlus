@@ -293,6 +293,18 @@
       "description": "A delivery truck",
       "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxkZWxpdmVyeSUyMHRydWNrfGVufDB8MHx8fDE3Mzc2MjgxNDB8MA&ixlib=rb-4.0.3&q=80&w=1080",
       "imageHint": "delivery truck"
+    },
+    {
+      "id": "governance-admin",
+      "description": "An image representing administrative tasks",
+      "imageUrl": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxvZmZpY2lhbCUyMGRvY3VtZW50fGVufDB8MHx8fDE3Mzc2MjgxNDF8MA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "official document"
+    },
+    {
+      "id": "governance-alert",
+      "description": "An image representing a public alert",
+      "imageUrl": "https://images.unsplash.com/photo-1574689049458-e4062a4729e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxtZWdhcGhvbmV8ZW58MHwwfHx8MTczNzYyODE0MXww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "megaphone alert"
     }
   ]
 }

@@ -270,3 +270,48 @@ export const transportServices = [
         image: PlaceHolderImages.find(p => p.id === 'transport-bus') 
     },
 ];
+
+export const adminProcedures = [
+    {
+        id: 1,
+        title: "Obtenir une Carte d'Identité",
+        category: "État Civil",
+        description: "Procédure pour l'obtention de la carte d'identité nationale pour les citoyens congolais.",
+        requiredDocuments: ["Acte de naissance", "Certificat de nationalité", "Photos passeport"],
+        estimatedCost: "25$",
+        estimatedTime: "30-60 jours",
+    },
+    {
+        id: 2,
+        title: "Créer une Petite Entreprise (RCCM)",
+        category: "Commerce",
+        description: "Étapes pour enregistrer une nouvelle entreprise au Registre de Commerce et de Crédit Mobilier.",
+        requiredDocuments: ["Statuts de l'entreprise", "Pièce d'identité du gérant", "Preuve de l'adresse"],
+        estimatedCost: "150$",
+        estimatedTime: "15-30 jours",
+    },
+];
+
+export const publicAlerts = [
+    {
+        id: 1,
+        title: "Campagne de vaccination contre la rougeole",
+        category: "Santé",
+        content: "Une campagne de vaccination pour les enfants de 6 mois à 5 ans aura lieu dans tous les centres de santé de la ville du 10 au 15 du mois prochain.",
+        publishedDate: "2024-07-20",
+    },
+    {
+        id: 2,
+        title: "Alerte sécurité : Mouvements suspects signalés",
+        category: "Sécurité",
+        content: "Les autorités demandent aux résidents du quartier Majengo de rester vigilants suite à des rapports de mouvements suspects. Limitez les déplacements nocturnes.",
+        publishedDate: "2024-07-22",
+    },
+    {
+        id: 3,
+        title: "Info Travaux : Route principale en réfection",
+        category: "Circulation",
+        content: "Des travaux de réfection de la chaussée sur le boulevard principal causeront des perturbations du 25 au 28 du mois. Des déviations seront mises en place.",
+        publishedDate: "2024-07-21",
+    },
+];

@@ -25,6 +25,7 @@ import {
   HeartPulse,
   Home,
   Car,
+  Landmark,
 } from "lucide-react";
 import { SokoPlusLogo } from "./icons";
 
@@ -113,6 +114,14 @@ const aiLinks = [
   },
 ]
 
+const governanceLinks = [
+    {
+    href: "/governance",
+    label: "Administration",
+    icon: Landmark,
+  },
+]
+
 export function MainNav() {
   const pathname = usePathname();
 
@@ -180,6 +189,14 @@ export function MainNav() {
                  </SidebarMenu>
             </SidebarGroup>
 
+            <SidebarSeparator/>
+
+             <SidebarGroup>
+                <SidebarGroupLabel>Gouvernance</SidebarGroupLabel>
+                <SidebarMenu>
+                    {renderLinks(governanceLinks)}
+                 </SidebarMenu>
+            </SidebarGroup>
 
         </SidebarMenu>
     </div>
