@@ -3,8 +3,8 @@
     {
       "id": "landing-hero",
       "description": "Hero image for the landing page",
-      "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxlYXJuaW5nfGVufDB8fHx8MTc2ODgxMTUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "students learning"
+      "imageUrl": "https://images.unsplash.com/photo-1534794474495-2236b539a2b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY29tbXVuaXR5fGVufDB8fHx8MTc2ODkwMDgwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "african community"
     },
     {
       "id": "course-marketing",
@@ -135,13 +135,13 @@
     {
       "id": "logo-marketing",
       "description": "Marketing agency logo",
-      "imageUrl": "https://images.unsplash.com/photo-1671599872868-b9fea0c6ee85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtYXJrZXRpbmclMjBsb2dvfGVufDB8fHx8MTc2ODk4NDgyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1671599872868-b9fea0c6ee85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtYXJrZXRpbmclMjBsb2dvfGVufDB8fHx8fDE3Njg5ODQ4Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "marketing logo"
     },
     {
       "id": "logo-ong",
       "description": "NGO logo",
-      "imageUrl": "https://images.unsplash.com/photo-1574003887216-5d32ce5f22fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxuZ28lMjBsb2dvfGVufDB8fHx8MTc2OTA2NDgyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1574003887216-5d32ce5f22fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxuZ28lMjBsb2dvfGVufDB8fHx8fDE3NjkwNjQ4Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "ngo logo"
     },
     {
@@ -248,27 +248,27 @@
     },
     {
       "id": "housing-house",
-      "description": "A modern house exterior",
-      "imageUrl": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBob3VzZXxlbnwwfDB8fHwxNzM3NjI4MDgwfDA&ixlib=rb-4.0.3&q=80&w=1080",
-      "imageHint": "modern house"
+      "description": "A modern african house exterior",
+      "imageUrl": "https://images.unsplash.com/photo-1559941125-051a89c0a6b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwaG91c2V8ZW58MHwwfHx8MTczNzYyODI1NXww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "african house"
     },
     {
       "id": "housing-room",
-      "description": "A clean room interior",
-      "imageUrl": "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxjbGVhbiUyMHJvb218ZW58MHwwfHx8MTczNzYyODEwMXww&ixlib=rb-4.0.3&q=80&w=1080",
-      "imageHint": "clean room"
+      "description": "A clean african room interior",
+      "imageUrl": "https://images.unsplash.com/photo-1605346443596-a6723c33314a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwaG9tZSUyMGludGVyaW9yfGVufDB8MHx8fDE3Mzc2Mjg0MzV8MA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "african interior"
     },
     {
       "id": "housing-studio",
-      "description": "A compact studio apartment",
-      "imageUrl": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxzdHVkaW8lMjBhcGFydG1lbnR8ZW58MHwwfHx8MTczNzYyODEyMnww&ixlib=rb-4.0.3&q=80&w=1080",
-      "imageHint": "studio apartment"
+      "description": "A compact african studio apartment",
+      "imageUrl": "https://images.unsplash.com/photo-1615875605825-5eb9bb5fea22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYmVkcm9vbXxlbnwwfDB8fHwxNzM3NjI4NDYzfDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "african bedroom"
     },
     {
       "id": "housing-land",
-      "description": "A plot of land for sale",
-      "imageUrl": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxsYW5kJTIwc2FsZXxlbnwwfDB8fHwxNzM3NjI4MTM2fDA&ixlib=rb-4.0.3&q=80&w=1080",
-      "imageHint": "land sale"
+      "description": "A plot of land for sale in Africa",
+      "imageUrl": "https://images.unsplash.com/photo-1547471080-7cc2d5d88e93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwbGFuZHNjYXBlfGVufDB8MHx8fDE3Mzc2Mjg0OTF8MA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "african landscape"
     },
     {
       "id": "transport-moto",
