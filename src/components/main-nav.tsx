@@ -23,6 +23,7 @@ import {
   Wand2,
   ClipboardSignature,
   HeartPulse,
+  Home,
 } from "lucide-react";
 import { SokoPlusLogo } from "./icons";
 
@@ -67,6 +68,11 @@ const communityLinks = [
     href: "/freelance",
     label: "Freelance",
     icon: ClipboardSignature,
+  },
+  {
+    href: "/housing",
+    label: "Logement",
+    icon: Home,
   },
   {
     href: "/solidarity",

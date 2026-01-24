@@ -102,6 +102,52 @@
         "sellerId",
         "status"
       ]
+    },
+    "Housing": {
+      "title": "Housing",
+      "description": "Represents a housing property listed on the platform.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The title of the housing listing."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the property."
+        },
+        "price": {
+          "type": "string",
+          "description": "The price of the housing (e.g., per month)."
+        },
+        "type": {
+            "type": "string",
+            "description": "Type of housing.",
+            "enum": ["Maison", "Chambre", "Studio", "Terrain"]
+        },
+        "location": {
+          "type": "string",
+          "description": "The location of the property."
+        },
+        "ownerId": {
+          "type": "string",
+          "description": "The ID of the user listing the property."
+        },
+        "imageUrls": {
+          "type": "array",
+          "items": {
+              "type": "string"
+          },
+          "description": "URLs of the property images."
+        }
+      },
+      "required": [
+        "title",
+        "price",
+        "type",
+        "location",
+        "ownerId"
+      ]
     }
   },
   "auth": {
@@ -127,6 +173,12 @@
         "$ref": "#/entities/Order"
       },
       "description": "Stores user orders for marketplace products."
+    },
+    "/housing/{housingId}": {
+      "schema": {
+        "$ref": "#/entities/Housing"
+      },
+      "description": "Stores housing listings."
     }
   }
 }

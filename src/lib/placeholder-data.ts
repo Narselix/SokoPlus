@@ -9,12 +9,12 @@ export const courses = [
         level: 'Débutant',
         duration: '15 Heures',
         teacher: 'Mme. Anifa',
-        progress: 0,
+        progress: 25,
         image: PlaceHolderImages.find(p => p.id === 'course-math-primary'),
         modules: [
             { id: 1, title: 'Module 1: Addition et Soustraction', lessons: [
-                { id: 1, title: 'Introduction à l\'addition', duration: '20 min', completed: false },
-                { id: 2, title: 'Pratiquer la soustraction', duration: '25 min', completed: false },
+                { id: 1, title: 'Introduction à l\'addition', duration: '20 min', completed: true },
+                { id: 2, title: 'Pratiquer la soustraction', duration: '25 min', completed: true },
                 { id: 3, title: 'Problèmes simples', duration: '30 min', completed: false },
             ]},
             { id: 2, title: 'Module 2: Multiplication et Division', lessons: [
@@ -32,16 +32,16 @@ export const courses = [
         level: 'Débutant',
         duration: '25 Heures',
         teacher: 'Mr. Baraka',
-        progress: 25,
+        progress: 75,
         image: PlaceHolderImages.find(p => p.id === 'course-biology-secondary'),
         modules: [
              { id: 1, title: 'Module 1: La Cellule', lessons: [
                 { id: 1, title: 'Qu\'est-ce qu\'une cellule ?', duration: '30 min', completed: true },
                 { id: 2, title: 'Cellules animales vs végétales', duration: '35 min', completed: true },
-                { id: 3, title: 'La division cellulaire', duration: '40 min', completed: false },
+                { id: 3, title: 'La division cellulaire', duration: '40 min', completed: true },
              ]},
              { id: 2, title: 'Module 2: Le Corps Humain', lessons: [
-                { id: 4, title: 'Le système digestif', duration: '30 min', completed: false },
+                { id: 4, title: 'Le système digestif', duration: '30 min', completed: true },
                 { id: 5, title: 'Le système respiratoire', duration: '30 min', completed: false },
              ]},
         ]
@@ -54,7 +54,7 @@ export const courses = [
         level: 'Intermédiaire',
         duration: '40 Heures',
         teacher: 'Prof. Ndeko',
-        progress: 0,
+        progress: 10,
         image: PlaceHolderImages.find(p => p.id === 'course-law-university'),
         modules: []
     },
@@ -66,11 +66,11 @@ export const courses = [
         level: 'Tous niveaux',
         duration: '30 Heures',
         teacher: 'Dr. Zawadi',
-        progress: 10,
+        progress: 0,
         image: PlaceHolderImages.find(p => p.id === 'course-history'),
         modules: [
              { id: 1, title: 'Module 1: Période pré-coloniale', lessons: [
-                { id: 1, title: 'Les grands royaumes', duration: '45 min', completed: true },
+                { id: 1, title: 'Les grands royaumes', duration: '45 min', completed: false },
                 { id: 2, title: 'Les routes commerciales', duration: '40 min', completed: false },
              ]},
         ]
@@ -83,7 +83,7 @@ export const courses = [
         level: 'Débutant',
         duration: '50 Heures',
         teacher: 'Mr. Patrick',
-        progress: 75,
+        progress: 50,
         image: PlaceHolderImages.find(p => p.id === 'course-tech'),
         modules: []
     },
@@ -113,8 +113,8 @@ export const courses = [
     },
     { 
         id: 8, 
-        title: "Introduction à l'Économie", 
-        description: "Maîtrisez les concepts de base de la microéconomie et de la macroéconomie pour mieux comprendre le monde qui vous entoure.",
+        title: "Entrepreneuriat pour débutants", 
+        description: "Apprenez à créer votre plan d'affaires, trouver des financements et lancer votre propre entreprise.",
         category: 'Business',
         level: 'Débutant',
         duration: '20 Heures',
@@ -187,4 +187,47 @@ export const healthArticles = [
     { id: 1, title: "Prévention du paludisme : 5 gestes qui sauvent", category: "Prévention", image: PlaceHolderImages.find(p => p.id === 'health-malaria') },
     { id: 2, title: "Bien manger pour rester en bonne santé", category: "Nutrition", image: PlaceHolderImages.find(p => p.id === 'health-nutrition') },
     { id: 3, title: "L'importance de l'hygiène des mains", category: "Hygiène", image: PlaceHolderImages.find(p => p.id === 'health-hygiene') },
+];
+
+export const housingListings = [
+    { 
+        id: 1, 
+        title: 'Maison familiale avec jardin', 
+        type: 'Maison', 
+        location: 'Goma, Les Volcans', 
+        price: '450$/mois',
+        description: 'Spacieuse maison de 3 chambres avec un grand jardin, idéale pour une famille. Proche des écoles et des commerces.',
+        owner: 'Propriétaire A',
+        image: PlaceHolderImages.find(p => p.id === 'housing-house') 
+    },
+    { 
+        id: 2, 
+        title: 'Chambre meublée pour étudiant', 
+        type: 'Chambre', 
+        location: 'Bukavu, Ibanda', 
+        price: '80$/mois',
+        description: 'Chambre simple et propre dans un appartement partagé, parfaite pour un étudiant. Accès cuisine et salle de bain communes.',
+        owner: 'Propriétaire B',
+        image: PlaceHolderImages.find(p => p.id === 'housing-room') 
+    },
+    { 
+        id: 3, 
+        title: 'Studio moderne en centre-ville', 
+        type: 'Studio', 
+        location: 'Goma, Centre-ville', 
+        price: '200$/mois',
+        description: 'Studio neuf et lumineux avec kitchenette et salle de bain privée. Situé au coeur de la ville.',
+        owner: 'Propriétaire C',
+        image: PlaceHolderImages.find(p => p.id === 'housing-studio') 
+    },
+    { 
+        id: 4, 
+        title: 'Terrain à bâtir avec vue sur le lac', 
+        type: 'Terrain', 
+        location: 'Route de Sake, Goma', 
+        price: '15,000$',
+        description: 'Grande parcelle de 400m² avec une vue imprenable sur le lac Kivu. Idéal pour construire la maison de vos rêves.',
+        owner: 'Propriétaire D',
+        image: PlaceHolderImages.find(p => p.id === 'housing-land') 
+    },
 ];

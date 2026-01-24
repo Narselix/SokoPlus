@@ -245,6 +245,30 @@
       "description": "Hand washing",
       "imageUrl": "https://images.unsplash.com/photo-1584362522440-4d09ca37e47b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxoYW5kJTIwd2FzaGluZ3xlbnwwfHx8fDE3NjkyMzQ2NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "hand washing"
+    },
+    {
+      "id": "housing-house",
+      "description": "A modern house exterior",
+      "imageUrl": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBob3VzZXxlbnwwfDB8fHwxNzM3NjI4MDgwfDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "modern house"
+    },
+    {
+      "id": "housing-room",
+      "description": "A clean room interior",
+      "imageUrl": "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxjbGVhbiUyMHJvb218ZW58MHwwfHx8MTczNzYyODEwMXww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "clean room"
+    },
+    {
+      "id": "housing-studio",
+      "description": "A compact studio apartment",
+      "imageUrl": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxzdHVkaW8lMjBhcGFydG1lbnR8ZW58MHwwfHx8MTczNzYyODEyMnww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "studio apartment"
+    },
+    {
+      "id": "housing-land",
+      "description": "A plot of land for sale",
+      "imageUrl": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxsYW5kJTIwc2FsZXxlbnwwfDB8fHwxNzM3NjI4MTM2fDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "land sale"
     }
   ]
 }
