@@ -209,6 +209,42 @@
       "description": "Client B logo",
       "imageUrl": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWNoJTIwc3RhcnR1cHxlbnwwfHx8fDE3NjkwNTQ2MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech startup"
+    },
+    {
+      "id": "health-hospital",
+      "description": "Hospital building",
+      "imageUrl": "https://images.unsplash.com/photo-1580615631392-aeb060d526e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aG9zcGl0YWwlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjkxOTA2ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hospital building"
+    },
+    {
+      "id": "health-center",
+      "description": "Health center",
+      "imageUrl": "https://images.unsplash.com/photo-1643055420019-402d60ee19a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxoZWFsdGglMjBjbGluaWN8ZW58MHx8fHwxNzY5MTYxNTg5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "health clinic"
+    },
+    {
+      "id": "health-clinic",
+      "description": "Dispensary",
+      "imageUrl": "https://images.unsplash.com/photo-1762275194213-74f8d57d60fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsb2NhbCUyMGNsaW5pY3xlbnwwfHx8fDE3NjkyMzQ2NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "local clinic"
+    },
+    {
+      "id": "health-malaria",
+      "description": "Malaria prevention",
+      "imageUrl": "https://images.unsplash.com/photo-1627829631879-5b6e726cb57c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb3NxdWl0byUyMG5ldHxlbnwwfHx8fDE3NjkyMzQ2NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mosquito net"
+    },
+    {
+      "id": "health-nutrition",
+      "description": "Healthy food",
+      "imageUrl": "https://images.unsplash.com/photo-1467453678174-768ec283a940?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aGVhbHRoeSUyMGZvb2R8ZW58MHx8fHwxNzY5MTc2MTcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "healthy food"
+    },
+    {
+      "id": "health-hygiene",
+      "description": "Hand washing",
+      "imageUrl": "https://images.unsplash.com/photo-1584362522440-4d09ca37e47b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxoYW5kJTIwd2FzaGluZ3xlbnwwfHx8fDE3NjkyMzQ2NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hand washing"
     }
   ]
 }

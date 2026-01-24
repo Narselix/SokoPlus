@@ -177,4 +177,14 @@ export const aiPicks = {
     availableSolidarityCampaigns: "Scolarisation des enfants de Masisi, Accès à l'eau potable à Minova, Soutien aux micro-entrepreneurs",
 }
 
-    
+export const healthCenters = [
+    { id: 1, name: 'Hôpital Général de Référence de Goma', type: 'Hôpital', location: 'Goma, RDC', services: ['Urgences', 'Chirurgie', 'Maternité'], image: PlaceHolderImages.find(p => p.id === 'health-hospital') },
+    { id: 2, name: 'Centre de Santé Carmel', type: 'Centre de Santé', location: 'Bukavu, RDC', services: ['Consultation générale', 'Petite chirurgie'], image: PlaceHolderImages.find(p => p.id === 'health-center') },
+    { id: 3, name: 'Dispensaire La Providence', type: 'Dispensaire', location: 'Uvira, RDC', services: ['Soins primaires', 'Vaccination'], image: PlaceHolderImages.find(p => p.id === 'health-clinic') },
+];
+
+export const healthArticles = [
+    { id: 1, title: "Prévention du paludisme : 5 gestes qui sauvent", category: "Prévention", image: PlaceHolderImages.find(p => p.id === 'health-malaria') },
+    { id: 2, title: "Bien manger pour rester en bonne santé", category: "Nutrition", image: PlaceHolderImages.find(p => p.id === 'health-nutrition') },
+    { id: 3, title: "L'importance de l'hygiène des mains", category: "Hygiène", image: PlaceHolderImages.find(p => p.id === 'health-hygiene') },
+];

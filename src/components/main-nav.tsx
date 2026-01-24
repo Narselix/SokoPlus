@@ -22,6 +22,7 @@ import {
   Smile,
   Wand2,
   ClipboardSignature,
+  HeartPulse,
 } from "lucide-react";
 import { SokoPlusLogo } from "./icons";
 
@@ -75,6 +76,11 @@ const communityLinks = [
 ];
 
 const servicesLinks = [
+    {
+        href: "/health",
+        label: "Santé & Orientation",
+        icon: HeartPulse,
+    },
     {
     href: "/pharmacy",
     label: "Pharmacie",
