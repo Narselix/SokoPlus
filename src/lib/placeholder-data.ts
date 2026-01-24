@@ -231,3 +231,42 @@ export const housingListings = [
         image: PlaceHolderImages.find(p => p.id === 'housing-land') 
     },
 ];
+
+export const transportServices = [
+    { 
+        id: 1, 
+        type: 'Taxi Moto', 
+        driver: 'John B.',
+        vehicle: 'Bajaj Boxer', 
+        location: 'Centre-ville, Goma', 
+        rating: 4.8,
+        image: PlaceHolderImages.find(p => p.id === 'transport-moto') 
+    },
+    { 
+        id: 2, 
+        type: 'Taxi Voiture', 
+        driver: 'Marie-Claire A.',
+        vehicle: 'Toyota Corolla', 
+        location: 'Les Volcans, Goma', 
+        rating: 4.9,
+        image: PlaceHolderImages.find(p => p.id === 'transport-car') 
+    },
+    { 
+        id: 3, 
+        type: 'Transport Marchandises', 
+        driver: 'David K.',
+        vehicle: 'Camion Canter', 
+        location: 'Port de Goma', 
+        rating: 4.7,
+        image: PlaceHolderImages.find(p => p.id === 'transport-truck') 
+    },
+    { 
+        id: 4, 
+        type: 'Bus Collectif', 
+        driver: 'Coopérative TUSHIRIKIANE',
+        vehicle: 'Ligne Majengo - Centre', 
+        location: 'Goma', 
+        rating: 4.5,
+        image: PlaceHolderImages.find(p => p.id === 'transport-bus') 
+    },
+];

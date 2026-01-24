@@ -24,6 +24,7 @@ import {
   ClipboardSignature,
   HeartPulse,
   Home,
+  Car,
 } from "lucide-react";
 import { SokoPlusLogo } from "./icons";
 
@@ -73,6 +74,11 @@ const communityLinks = [
     href: "/housing",
     label: "Logement",
     icon: Home,
+  },
+  {
+    href: "/transport",
+    label: "Transport",
+    icon: Car,
   },
   {
     href: "/solidarity",

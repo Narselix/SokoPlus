@@ -148,6 +148,49 @@
         "location",
         "ownerId"
       ]
+    },
+    "Transport": {
+      "title": "Transport",
+      "description": "Represents a transport service offered on the platform.",
+      "type": "object",
+      "properties": {
+        "driverId": {
+          "type": "string",
+          "description": "The ID of the user offering the service."
+        },
+        "driverName": {
+            "type": "string",
+            "description": "The name of the driver."
+        },
+        "type": {
+            "type": "string",
+            "description": "Type of transport.",
+            "enum": ["Taxi Moto", "Taxi Voiture", "Collectif", "Marchandises"]
+        },
+        "vehicle": {
+            "type": "string",
+            "description": "Information about the vehicle (e.g., make, model, license plate)."
+        },
+        "location": {
+          "type": "string",
+          "description": "The driver's current or base location."
+        },
+        "rating": {
+            "type": "number",
+            "description": "The driver's average rating."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "The URL of the vehicle/driver image."
+        }
+      },
+      "required": [
+        "driverId",
+        "driverName",
+        "type",
+        "vehicle",
+        "location"
+      ]
     }
   },
   "auth": {
@@ -179,6 +222,12 @@
         "$ref": "#/entities/Housing"
       },
       "description": "Stores housing listings."
+    },
+    "/transport/{transportId}": {
+      "schema": {
+        "$ref": "#/entities/Transport"
+      },
+      "description": "Stores transport service listings."
     }
   }
 }
