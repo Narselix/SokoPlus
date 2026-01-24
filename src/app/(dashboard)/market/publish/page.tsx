@@ -1,13 +1,48 @@
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { ImageUp, PlusCircle } from "lucide-react";
+import { ImageUp, X } from "lucide-react";
 
 export default function PublishAdPage() {
   const categories = ["Artisanat", "Alimentaire", "Mode", "Électronique", "Maison", "Services", "Véhicules"];
+  const [images, setImages] = useState<string[]>([]);
+  
+  // A placeholder for the actual files
+  const [imageFiles, setImageFiles] = useState<File[]>([]);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const files = Array.from(e.target.files);
+      
+      const currentImageCount = imageFiles.length;
+      const remainingSlots = 5 - currentImageCount;
+      if (remainingSlots <= 0) return;
+
+      const filesToAdd = files.slice(0, remainingSlots);
+
+      const newImageFiles = [...imageFiles, ...filesToAdd];
+      setImageFiles(newImageFiles);
+      
+      const newImageUrls = newImageFiles.map(file => URL.createObjectURL(file));
+      setImages(newImageUrls);
+    }
+  };
+
+  const removeImage = (index: number) => {
+    const newImageFiles = [...imageFiles];
+    newImageFiles.splice(index, 1);
+    setImageFiles(newImageFiles);
+
+    const newImageUrls = newImageFiles.map(file => URL.createObjectURL(file));
+    setImages(newImageUrls);
+  };
 
   return (
     <div className="space-y-8 max-w-4xl mx-auto">
@@ -56,23 +91,38 @@ export default function PublishAdPage() {
         </Card>
 
         <Card>
-            <CardHeader>
-                <CardTitle>Photos</CardTitle>
-                <CardDescription>Ajoutez jusqu'à 5 photos. La première sera la photo principale.</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                    <div className="aspect-square border-2 border-dashed rounded-lg flex flex-col items-center justify-center text-muted-foreground cursor-pointer hover:bg-muted/50">
-                        <ImageUp className="h-8 w-8" />
-                        <span className="text-xs text-center mt-2">Ajouter une photo</span>
+          <CardHeader>
+              <CardTitle>Photos</CardTitle>
+              <CardDescription>Ajoutez jusqu'à 5 photos. La première sera la photo principale.</CardDescription>
+          </CardHeader>
+          <CardContent>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                  {images.map((image, index) => (
+                    <div key={index} className="relative aspect-square group">
+                      <Image src={image} alt={`Preview ${index}`} fill className="rounded-md object-cover" />
+                      <Button
+                        type="button"
+                        variant="destructive"
+                        size="icon"
+                        className="absolute -top-2 -right-2 h-6 w-6 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                        onClick={() => removeImage(index)}
+                      >
+                        <X className="h-4 w-4" />
+                      </Button>
                     </div>
-                     {Array(4).fill(0).map((_, i) => (
-                         <div key={i} className="aspect-square bg-muted rounded-lg flex items-center justify-center">
-                            <PlusCircle className="h-6 w-6 text-muted-foreground/50"/>
-                         </div>
-                     ))}
-                </div>
-            </CardContent>
+                  ))}
+                  {images.length < 5 && (
+                    <Label htmlFor="image-upload" className="aspect-square border-2 border-dashed rounded-lg flex flex-col items-center justify-center text-muted-foreground cursor-pointer hover:bg-muted/50 transition-colors">
+                      <ImageUp className="h-8 w-8" />
+                      <span className="text-xs text-center mt-2">Ajouter</span>
+                      <Input id="image-upload" type="file" multiple accept="image/*" className="sr-only" onChange={handleImageChange} />
+                    </Label>
+                  )}
+              </div>
+              <p className="text-xs text-muted-foreground mt-2">
+                Pour l'instant, les images sont uniquement prévisualisées. La fonctionnalité de téléversement sera ajoutée prochainement.
+              </p>
+          </CardContent>
         </Card>
         
         <div className="flex justify-end">
