@@ -40,7 +40,7 @@
           "description": "A detailed description of the product."
         },
         "price": {
-          "type": "number",
+          "type": "string",
           "description": "The price of the product."
         },
         "category": {
@@ -55,9 +55,12 @@
           "type": "string",
           "description": "The ID of the user selling the product."
         },
-        "imageUrl": {
-          "type": "string",
-          "description": "The URL of the product image."
+        "imageUrls": {
+          "type": "array",
+          "items": {
+              "type": "string"
+          },
+          "description": "URLs of the product images."
         }
       },
       "required": [
@@ -217,6 +220,20 @@
         "publishedDate": { "type": "string", "format": "date-time" }
       },
       "required": ["title", "category", "content", "publishedDate"]
+    },
+    "Article": {
+      "title": "Article",
+      "description": "Represents a well-being article.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "category": { "type": "string" },
+        "content": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "authorId": { "type": "string" }
+      },
+      "required": ["title", "author", "category", "content", "authorId"]
     }
   },
   "auth": {
@@ -262,6 +279,10 @@
     "/publicAlerts/{alertId}": {
       "schema": { "$ref": "#/entities/PublicAlert" },
       "description": "Stores public alerts."
+    },
+    "/articles/{articleId}": {
+      "schema": { "$ref": "#/entities/Article" },
+      "description": "Stores well-being articles."
     }
   }
 }
