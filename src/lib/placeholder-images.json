@@ -3,8 +3,8 @@
     {
       "id": "landing-hero",
       "description": "Hero image for the landing page",
-      "imageUrl": "https://images.unsplash.com/photo-1534794474495-2236b539a2b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY29tbXVuaXR5fGVufDB8fHx8MTc2ODkwMDgwNnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "african community"
+      "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwyfHxoYXBweSUyMGFmcmljYW4lMjBzdHVkZW50c3xlbnwwfDB8fHwxNzM3NjI4MTQyfDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "happy students"
     },
     {
       "id": "course-marketing",
@@ -159,7 +159,7 @@
     {
       "id": "solidarity-microcredit",
       "description": "Microcredit for solidarity campaign",
-      "imageUrl": "https://images.unsplash.com/photo-1594402919317-9e67dca0a305?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzbWFsbCUyMGJ1c2luZXNzfGVufDB8fHx8MTc2ODk4Nzk4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1594402919317-9e67dca0a305?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzbWFsbCUyMGJ1c2luZXNzfGVufDB8fHx8fDE3Njg5ODc5ODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "small business"
     },
     {
@@ -249,8 +249,8 @@
     {
       "id": "housing-house",
       "description": "A modern african house exterior",
-      "imageUrl": "https://images.unsplash.com/photo-1559941125-051a89c0a6b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwaG91c2V8ZW58MHwwfHx8MTczNzYyODI1NXww&ixlib=rb-4.0.3&q=80&w=1080",
-      "imageHint": "african house"
+      "imageUrl": "https://images.unsplash.com/photo-1605346443596-a6723c33314a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzYyMDB8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwaG9tZSUyMGludGVyaW9yfGVufDB8MHx8fDE3Mzc2Mjg0MzV8MA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "african interior"
     },
     {
       "id": "housing-room",
