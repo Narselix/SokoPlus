@@ -127,15 +127,16 @@ export function MainNav() {
 
   const renderLinks = (links: any[]) => links.map((link) => (
     <SidebarMenuItem key={link.href}>
-        <Link href={link.href} passHref legacyBehavior>
         <SidebarMenuButton
             isActive={pathname === link.href || (pathname.startsWith(link.href) && link.href !== "/")}
             tooltip={link.label}
+            asChild
         >
-            <link.icon />
-            <span>{link.label}</span>
+            <Link href={link.href}>
+                <link.icon />
+                <span>{link.label}</span>
+            </Link>
         </SidebarMenuButton>
-        </Link>
     </SidebarMenuItem>
     ));
 
