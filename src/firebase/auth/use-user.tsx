@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { onAuthStateChanged, type User } from 'firebase/auth';
-import { useAuth } from '../provider';
-import { doc, getDoc, Firestore } from 'firebase/firestore';
-import { useFirestore } from '../provider';
+import { useAuth, useFirestore } from '../provider';
+import { doc, onSnapshot, type Unsubscribe, type Firestore } from 'firebase/firestore';
 
 export function useUser() {
     const auth = useAuth();
@@ -19,29 +18,47 @@ export function useUser() {
             return;
         }
 
-        const unsubscribe = onAuthStateChanged(auth, async (user) => {
+        let unsubscribeSnapshot: Unsubscribe | null = null;
+
+        const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
             setUser(user);
+
+            if (unsubscribeSnapshot) {
+                unsubscribeSnapshot();
+                unsubscribeSnapshot = null;
+            }
+
             if (user) {
-                try {
-                    const userDocRef = doc(firestore as Firestore, 'users', user.uid);
-                    const userDoc = await getDoc(userDocRef);
-                    if (userDoc.exists()) {
-                        setUserProfile(userDoc.data());
-                    } else {
-                        console.warn("Le document de l'utilisateur n'existe pas pour l'UID:", user.uid);
+                const userDocRef = doc(firestore as Firestore, 'users', user.uid);
+                
+                unsubscribeSnapshot = onSnapshot(userDocRef, 
+                    (doc) => {
+                        if (doc.exists()) {
+                            setUserProfile(doc.data());
+                        } else {
+                            console.warn("Le document de l'utilisateur n'existe pas pour l'UID:", user.uid);
+                            setUserProfile(null);
+                        }
+                        setLoading(false);
+                    },
+                    (error) => {
+                        console.error("Échec de la récupération du document utilisateur:", error);
                         setUserProfile(null);
+                        setLoading(false);
                     }
-                } catch (error) {
-                    console.error("Échec de la récupération du document utilisateur:", error);
-                    setUserProfile(null);
-                }
+                );
             } else {
                 setUserProfile(null);
+                setLoading(false);
             }
-            setLoading(false);
         });
 
-        return () => unsubscribe();
+        return () => {
+            unsubscribeAuth();
+            if (unsubscribeSnapshot) {
+                unsubscribeSnapshot();
+            }
+        };
     }, [auth, firestore]);
 
     return { user, userProfile, loading };
