@@ -31,7 +31,7 @@ import { SokoPlusLogo } from "./icons";
 
 const primaryLinks = [
   {
-    href: "/",
+    href: "/dashboard",
     label: "Tableau de bord",
     icon: LayoutDashboard,
   },
