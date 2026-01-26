@@ -15,11 +15,13 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { useAuth } from "@/firebase";
+import { useAuth, useUser } from "@/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useToast } from "@/hooks/use-toast";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Loader2 } from "lucide-react";
+import { useEffect } from "react";
+import { SokoPlusLogo } from "@/components/icons";
 
 const formSchema = z.object({
   email: z.string().email("L'adresse email est invalide"),
@@ -30,6 +32,14 @@ export default function LoginPage() {
   const router = useRouter();
   const auth = useAuth();
   const { toast } = useToast();
+  const { user, loading } = useUser();
+
+  useEffect(() => {
+    if (!loading && user) {
+      router.push("/");
+    }
+  }, [user, loading, router]);
+
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -52,7 +62,6 @@ export default function LoginPage() {
         title: "Connexion réussie",
         description: "Vous êtes maintenant connecté.",
       });
-      router.push("/");
     } catch (error: any) {
       toast({
         variant: "destructive",
@@ -60,6 +69,14 @@ export default function LoginPage() {
         description: "Email ou mot de passe incorrect.",
       });
     }
+  }
+
+  if (loading || (!loading && user)) {
+    return (
+        <div className="flex h-screen w-screen items-center justify-center bg-secondary/30">
+             <SokoPlusLogo className="h-12 w-12 animate-spin text-primary" />
+        </div>
+    );
   }
 
   return (

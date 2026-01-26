@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { useAuth, useFirestore } from "@/firebase";
+import { useAuth, useFirestore, useUser } from "@/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useToast } from "@/hooks/use-toast";
@@ -23,6 +23,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Loader2 } from "lucide-react";
 import { errorEmitter } from "@/firebase/error-emitter";
 import { FirestorePermissionError } from "@/firebase/errors";
+import { useEffect } from "react";
+import { SokoPlusLogo } from "@/components/icons";
 
 const formSchema = z.object({
   name: z.string().min(1, "Le nom est requis"),
@@ -35,6 +37,14 @@ export default function SignupPage() {
   const auth = useAuth();
   const firestore = useFirestore();
   const { toast } = useToast();
+  const { user, loading } = useUser();
+
+  useEffect(() => {
+    if (!loading && user) {
+      router.push("/");
+    }
+  }, [user, loading, router]);
+
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -77,7 +87,6 @@ export default function SignupPage() {
         title: "Compte créé",
         description: "Votre compte a été créé avec succès.",
       });
-      router.push("/");
     } catch (error: any) {
       toast({
         variant: "destructive",
@@ -85,6 +94,14 @@ export default function SignupPage() {
         description: error.message,
       });
     }
+  }
+
+  if (loading || (!loading && user)) {
+    return (
+        <div className="flex h-screen w-screen items-center justify-center bg-secondary/30">
+            <SokoPlusLogo className="h-12 w-12 animate-spin text-primary" />
+        </div>
+    );
   }
 
   return (
