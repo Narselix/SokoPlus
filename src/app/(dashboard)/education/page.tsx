@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from "react";
@@ -6,16 +5,15 @@ import Image from "next/image";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import { courses as placeholderCourses } from "@/lib/placeholder-data";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 import { useFirestore, useUser } from "@/firebase";
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
-import { PlusCircle, Loader2 } from "lucide-react";
+import { PlusCircle, Loader2, BookOpen } from "lucide-react";
 
 export default function EducationPage() {
-  const { user, userProfile } = useUser();
+  const { userProfile } = useUser();
   const firestore = useFirestore();
   const [dbCourses, setDbCourses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -39,8 +37,7 @@ export default function EducationPage() {
     return () => unsubscribe();
   }, [firestore]);
 
-  // Combine placeholders with database courses
-  const allCourses = [...dbCourses, ...placeholderCourses];
+  const allCourses = dbCourses;
 
   return (
     <div className="space-y-8">
@@ -76,7 +73,7 @@ export default function EducationPage() {
             <div className="flex justify-center p-12">
                 <Loader2 className="h-8 w-8 animate-spin text-primary" />
             </div>
-        ) : (
+        ) : allCourses.length > 0 ? (
             <>
                 <TabsContent value="Tous" className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {allCourses.map((course) => (
@@ -91,6 +88,12 @@ export default function EducationPage() {
                     </TabsContent>
                 ))}
             </>
+        ) : (
+            <div className="text-center py-20 border-2 border-dashed rounded-lg bg-muted/30">
+                <BookOpen className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
+                <h3 className="text-lg font-semibold">Aucun cours disponible</h3>
+                <p className="text-muted-foreground">Les cours publiés par les écoles apparaîtront ici.</p>
+            </div>
         )}
       </Tabs>
     </div>

@@ -1,15 +1,31 @@
+'use client';
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { products } from "@/lib/placeholder-data";
-import { PlusCircle, Search } from "lucide-react";
+import { PlusCircle, Search, Store, Loader2 } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
+import { useFirestore } from "@/firebase";
+import { collection, onSnapshot, query } from "firebase/firestore";
 
 export default function MarketPage() {
+  const firestore = useFirestore();
+  const [products, setProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   const categories = ["Toutes", "Artisanat", "Alimentaire", "Mode", "Électronique", "Maison"];
+
+  useEffect(() => {
+    if (!firestore) return;
+    const unsubscribe = onSnapshot(collection(firestore, "products"), (snapshot) => {
+      setProducts(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+      setLoading(false);
+    });
+    return () => unsubscribe();
+  }, [firestore]);
 
   return (
     <div className="space-y-8">
@@ -47,38 +63,49 @@ export default function MarketPage() {
         </div>
       </div>
       
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {products.map((product) => (
-          <Card key={product.id} className="flex flex-col h-full overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
-            <Link href={`/market/${product.id}`} className="flex flex-col h-full">
-              {product.image && (
-                <div className="aspect-square relative w-full bg-secondary overflow-hidden">
-                  <Image
-                    src={product.image.imageUrl}
-                    alt={product.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    data-ai-hint={product.image.imageHint}
-                  />
-                </div>
-              )}
-              <CardHeader className="p-4">
-                  <CardTitle className="text-lg font-headline leading-tight">{product.name}</CardTitle>
-                  <p className="text-sm text-muted-foreground pt-1">{product.location}</p>
-              </CardHeader>
-              <CardContent className="p-4 pt-0 flex-grow">
-                <Badge variant="secondary">{product.category}</Badge>
-              </CardContent>
-              <CardFooter className="p-4 pt-0 flex justify-between items-center">
-                  <p className="text-lg font-semibold">{product.price}</p>
-                  <Button variant="outline" asChild>
-                    <span className="w-full text-center">Voir l'offre</span>
-                  </Button>
-              </CardFooter>
-            </Link>
-          </Card>
-        ))}
-      </div>
+      {loading ? (
+        <div className="flex justify-center p-12">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        </div>
+      ) : products.length > 0 ? (
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {products.map((product) => (
+            <Card key={product.id} className="flex flex-col h-full overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
+                <Link href={`/market/${product.id}`} className="flex flex-col h-full">
+                {product.imageUrls && product.imageUrls.length > 0 && (
+                    <div className="aspect-square relative w-full bg-secondary overflow-hidden">
+                    <Image
+                        src={product.imageUrls[0]}
+                        alt={product.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    </div>
+                )}
+                <CardHeader className="p-4">
+                    <CardTitle className="text-lg font-headline leading-tight">{product.name}</CardTitle>
+                    <p className="text-sm text-muted-foreground pt-1">{product.location}</p>
+                </CardHeader>
+                <CardContent className="p-4 pt-0 flex-grow">
+                    <Badge variant="secondary">{product.category}</Badge>
+                </CardContent>
+                <CardFooter className="p-4 pt-0 flex justify-between items-center">
+                    <p className="text-lg font-semibold">{product.price}</p>
+                    <Button variant="outline" asChild>
+                        <span className="w-full text-center">Voir l'offre</span>
+                    </Button>
+                </CardFooter>
+                </Link>
+            </Card>
+            ))}
+        </div>
+      ) : (
+        <div className="text-center py-20 border-2 border-dashed rounded-lg bg-muted/30">
+            <Store className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
+            <h3 className="text-lg font-semibold">Le marché est vide</h3>
+            <p className="text-muted-foreground">Soyez le premier à publier un produit local !</p>
+        </div>
+      )}
     </div>
   );
 }
