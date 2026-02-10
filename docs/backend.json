@@ -1,3 +1,4 @@
+
 {
   "entities": {
     "UserProfile": {
@@ -20,269 +21,117 @@
           "enum": [
             "Student",
             "Teacher",
-            "Admin"
+            "Admin",
+            "Parent"
           ]
         }
       },
       "required": ["name", "email", "role"]
+    },
+    "SchoolFee": {
+      "title": "School Fee",
+      "description": "Represents a school fee payment record.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "amount": { "type": "string" },
+        "status": { "type": "string", "enum": ["Payé", "En attente", "Partiel"] },
+        "date": { "type": "string", "format": "date-time" },
+        "term": { "type": "string" }
+      },
+      "required": ["studentId", "amount", "status"]
+    },
+    "StudentGrade": {
+      "title": "Student Grade",
+      "description": "Represents a grade obtained by a student.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "subject": { "type": "string" },
+        "score": { "type": "number" },
+        "maxScore": { "type": "number" },
+        "term": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" }
+      },
+      "required": ["studentId", "subject", "score"]
+    },
+    "Attendance": {
+      "title": "Attendance",
+      "description": "Represents an attendance record.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "status": { "type": "string", "enum": ["Présent", "Absent", "Retard"] }
+      },
+      "required": ["studentId", "date", "status"]
+    },
+    "SchoolNews": {
+      "title": "School News",
+      "description": "General news and announcements from the school.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "category": { "type": "string" }
+      },
+      "required": ["title", "content", "date"]
     },
     "Product": {
       "title": "Product",
       "description": "Represents a product listed on the marketplace.",
       "type": "object",
       "properties": {
-        "name": {
-          "type": "string",
-          "description": "The name of the product."
-        },
-        "description": {
-          "type": "string",
-          "description": "A detailed description of the product."
-        },
-        "price": {
-          "type": "string",
-          "description": "The price of the product."
-        },
-        "category": {
-          "type": "string",
-          "description": "The category the product belongs to."
-        },
-        "location": {
-          "type": "string",
-          "description": "The location of the seller."
-        },
-        "sellerId": {
-          "type": "string",
-          "description": "The ID of the user selling the product."
-        },
-        "imageUrls": {
-          "type": "array",
-          "items": {
-              "type": "string"
-          },
-          "description": "URLs of the product images."
-        }
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "string" },
+        "category": { "type": "string" },
+        "location": { "type": "string" },
+        "sellerId": { "type": "string" },
+        "imageUrls": { "type": "array", "items": { "type": "string" } }
       },
-      "required": [
-        "name",
-        "price",
-        "category",
-        "sellerId"
-      ]
-    },
-    "Order": {
-      "title": "Order",
-      "description": "Represents an order placed by a user for a product.",
-      "type": "object",
-      "properties": {
-        "productId": {
-          "type": "string"
-        },
-        "buyerId": {
-          "type": "string"
-        },
-        "sellerId": {
-          "type": "string"
-        },
-        "status": {
-          "type": "string",
-          "enum": [
-            "placed",
-            "confirmed",
-            "shipped",
-            "delivered",
-            "cancelled"
-          ]
-        },
-        "createdAt": {
-          "type": "string",
-          "format": "date-time"
-        }
-      },
-      "required": [
-        "productId",
-        "buyerId",
-        "sellerId",
-        "status"
-      ]
+      "required": ["name", "price", "category", "sellerId"]
     },
     "Housing": {
       "title": "Housing",
       "description": "Represents a housing property listed on the platform.",
       "type": "object",
       "properties": {
-        "title": {
-          "type": "string",
-          "description": "The title of the housing listing."
-        },
-        "description": {
-          "type": "string",
-          "description": "A detailed description of the property."
-        },
-        "price": {
-          "type": "string",
-          "description": "The price of the housing (e.g., per month)."
-        },
-        "type": {
-            "type": "string",
-            "description": "Type of housing.",
-            "enum": ["Maison", "Chambre", "Studio", "Terrain"]
-        },
-        "location": {
-          "type": "string",
-          "description": "The location of the property."
-        },
-        "ownerId": {
-          "type": "string",
-          "description": "The ID of the user listing the property."
-        },
-        "imageUrls": {
-          "type": "array",
-          "items": {
-              "type": "string"
-          },
-          "description": "URLs of the property images."
-        }
-      },
-      "required": [
-        "title",
-        "price",
-        "type",
-        "location",
-        "ownerId"
-      ]
-    },
-    "Transport": {
-      "title": "Transport",
-      "description": "Represents a transport service offered on the platform.",
-      "type": "object",
-      "properties": {
-        "driverId": {
-          "type": "string",
-          "description": "The ID of the user offering the service."
-        },
-        "driverName": {
-            "type": "string",
-            "description": "The name of the driver."
-        },
-        "type": {
-            "type": "string",
-            "description": "Type of transport.",
-            "enum": ["Taxi Moto", "Taxi Voiture", "Collectif", "Marchandises"]
-        },
-        "vehicle": {
-            "type": "string",
-            "description": "Information about the vehicle (e.g., make, model, license plate)."
-        },
-        "location": {
-          "type": "string",
-          "description": "The driver's current or base location."
-        },
-        "rating": {
-            "type": "number",
-            "description": "The driver's average rating."
-        },
-        "imageUrl": {
-          "type": "string",
-          "description": "The URL of the vehicle/driver image."
-        }
-      },
-      "required": [
-        "driverId",
-        "driverName",
-        "type",
-        "vehicle",
-        "location"
-      ]
-    },
-    "AdministrativeProcedure": {
-      "title": "Administrative Procedure",
-      "description": "Represents an official administrative procedure.",
-      "type": "object",
-      "properties": {
         "title": { "type": "string" },
-        "category": { "type": "string" },
         "description": { "type": "string" },
-        "requiredDocuments": { "type": "array", "items": { "type": "string" } },
-        "estimatedCost": { "type": "string" },
-        "estimatedTime": { "type": "string" }
+        "price": { "type": "string" },
+        "type": { "type": "string", "enum": ["Maison", "Chambre", "Studio", "Terrain"] },
+        "location": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "imageUrls": { "type": "array", "items": { "type": "string" } }
       },
-      "required": ["title", "category", "description"]
-    },
-    "PublicAlert": {
-      "title": "Public Alert",
-      "description": "Represents a public alert or information bulletin.",
-      "type": "object",
-      "properties": {
-        "title": { "type": "string" },
-        "category": { "type": "string", "enum": ["Sécurité", "Santé", "Circulation", "Info Locale"] },
-        "content": { "type": "string" },
-        "publishedDate": { "type": "string", "format": "date-time" }
-      },
-      "required": ["title", "category", "content", "publishedDate"]
-    },
-    "Article": {
-      "title": "Article",
-      "description": "Represents a well-being article.",
-      "type": "object",
-      "properties": {
-        "title": { "type": "string" },
-        "author": { "type": "string" },
-        "category": { "type": "string" },
-        "content": { "type": "string" },
-        "imageUrl": { "type": "string" },
-        "authorId": { "type": "string" }
-      },
-      "required": ["title", "author", "category", "content", "authorId"]
+      "required": ["title", "price", "type", "location", "ownerId"]
     }
   },
   "auth": {
-    "providers": [
-      "email_password"
-    ]
+    "providers": ["email_password"]
   },
   "firestore": {
     "/users/{userId}": {
-      "schema": {
-        "$ref": "#/entities/UserProfile"
-      },
+      "schema": { "$ref": "#/entities/UserProfile" },
       "description": "Stores user profile information."
     },
-    "/products/{productId}": {
-      "schema": {
-        "$ref": "#/entities/Product"
-      },
-      "description": "Stores product listings for the marketplace."
+    "/schoolFees/{feeId}": {
+      "schema": { "$ref": "#/entities/SchoolFee" },
+      "description": "Stores school fee records."
     },
-    "/orders/{orderId}": {
-      "schema": {
-        "$ref": "#/entities/Order"
-      },
-      "description": "Stores user orders for marketplace products."
+    "/grades/{gradeId}": {
+      "schema": { "$ref": "#/entities/StudentGrade" },
+      "description": "Stores student grades."
     },
-    "/housing/{housingId}": {
-      "schema": {
-        "$ref": "#/entities/Housing"
-      },
-      "description": "Stores housing listings."
+    "/attendance/{attendanceId}": {
+      "schema": { "$ref": "#/entities/Attendance" },
+      "description": "Stores attendance records."
     },
-    "/transport/{transportId}": {
-      "schema": {
-        "$ref": "#/entities/Transport"
-      },
-      "description": "Stores transport service listings."
-    },
-    "/adminProcedures/{procedureId}": {
-      "schema": { "$ref": "#/entities/AdministrativeProcedure" },
-      "description": "Stores administrative procedures."
-    },
-    "/publicAlerts/{alertId}": {
-      "schema": { "$ref": "#/entities/PublicAlert" },
-      "description": "Stores public alerts."
-    },
-    "/articles/{articleId}": {
-      "schema": { "$ref": "#/entities/Article" },
-      "description": "Stores well-being articles."
+    "/schoolNews/{newsId}": {
+      "schema": { "$ref": "#/entities/SchoolNews" },
+      "description": "Stores school announcements."
     }
   }
 }
