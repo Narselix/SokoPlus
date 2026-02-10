@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -30,7 +29,12 @@ import {
   Receipt,
   FileSpreadsheet,
   MessageSquareText,
-  Newspaper
+  Newspaper,
+  BookOpen,
+  Users,
+  CheckSquare,
+  Library,
+  Archive
 } from "lucide-react";
 import { SokoPlusLogo } from "./icons";
 import { useUser } from "@/firebase";
@@ -39,18 +43,27 @@ export function MainNav() {
   const pathname = usePathname();
   const { userProfile } = useUser();
 
-  const isEducationStaff = userProfile?.role === "Teacher" || userProfile?.role === "Admin";
-  const isStudentOrParent = userProfile?.role === "Student" || userProfile?.role === "Parent";
+  const isStaff = userProfile?.role === "Teacher" || userProfile?.role === "Admin";
+  const isAdmin = userProfile?.role === "Admin";
 
   const primaryLinks = [
     { href: "/dashboard", label: "Tableau de bord", icon: LayoutDashboard },
   ];
 
+  // Liens pour les parents et élèves
   const schoolingLinks = [
     { href: "/schooling/grades", label: "Notes & Résultats", icon: FileSpreadsheet },
     { href: "/schooling/fees", label: "Frais Scolaires", icon: Receipt },
     { href: "/schooling/news", label: "Actualités École", icon: Newspaper },
     { href: "/schooling/messages", label: "Messages École", icon: MessageSquareText },
+  ];
+
+  // Liens de gestion pour le personnel (Enseignants/Admin)
+  const managementLinks = [
+    { href: "/schooling/admin/attendance", label: "Faire l'appel", icon: CheckSquare },
+    { href: "/schooling/admin/grades", label: "Saisie des notes", icon: GraduationCap },
+    { href: "/schooling/library", label: "Bibliothèque", icon: Library },
+    { href: "/schooling/archives", label: "Archives", icon: Archive },
   ];
 
   const educationLinks = [
@@ -110,6 +123,17 @@ export function MainNav() {
         </SidebarGroup>
 
         <SidebarSeparator />
+
+        {/* Section Management pour l'école (Shule style) */}
+        {isStaff && (
+          <>
+            <SidebarGroup>
+              <SidebarGroupLabel>Gestion École</SidebarGroupLabel>
+              <SidebarMenu>{renderLinks(managementLinks)}</SidebarMenu>
+            </SidebarGroup>
+            <SidebarSeparator />
+          </>
+        )}
 
         <SidebarGroup>
           <SidebarGroupLabel>Ma Scolarité</SidebarGroupLabel>
