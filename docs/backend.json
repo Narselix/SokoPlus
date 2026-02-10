@@ -78,6 +78,23 @@
       },
       "required": ["title", "content", "date"]
     },
+    "Course": {
+      "title": "Course",
+      "description": "Represents an educational course created by a school or teacher.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "level": { "type": "string" },
+        "duration": { "type": "string" },
+        "teacher": { "type": "string" },
+        "teacherId": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "description", "category", "teacherId"]
+    },
     "Product": {
       "title": "Product",
       "description": "Represents a product listed on the marketplace.",
@@ -132,6 +149,10 @@
     "/schoolNews/{newsId}": {
       "schema": { "$ref": "#/entities/SchoolNews" },
       "description": "Stores school announcements."
+    },
+    "/courses/{courseId}": {
+      "schema": { "$ref": "#/entities/Course" },
+      "description": "Stores educational courses."
     }
   }
 }

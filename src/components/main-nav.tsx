@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -34,7 +35,8 @@ import {
   Users,
   CheckSquare,
   Library,
-  Archive
+  Archive,
+  BookOpenText
 } from "lucide-react";
 import { SokoPlusLogo } from "./icons";
 import { useUser } from "@/firebase";
@@ -44,13 +46,11 @@ export function MainNav() {
   const { userProfile } = useUser();
 
   const isStaff = userProfile?.role === "Teacher" || userProfile?.role === "Admin";
-  const isAdmin = userProfile?.role === "Admin";
 
   const primaryLinks = [
     { href: "/dashboard", label: "Tableau de bord", icon: LayoutDashboard },
   ];
 
-  // Liens pour les parents et élèves
   const schoolingLinks = [
     { href: "/schooling/grades", label: "Notes & Résultats", icon: FileSpreadsheet },
     { href: "/schooling/fees", label: "Frais Scolaires", icon: Receipt },
@@ -58,10 +58,10 @@ export function MainNav() {
     { href: "/schooling/messages", label: "Messages École", icon: MessageSquareText },
   ];
 
-  // Liens de gestion pour le personnel (Enseignants/Admin)
   const managementLinks = [
     { href: "/schooling/admin/attendance", label: "Faire l'appel", icon: CheckSquare },
     { href: "/schooling/admin/grades", label: "Saisie des notes", icon: GraduationCap },
+    { href: "/schooling/admin/courses", label: "Gestion des Cours", icon: BookOpenText },
     { href: "/schooling/library", label: "Bibliothèque", icon: Library },
     { href: "/schooling/archives", label: "Archives", icon: Archive },
   ];
@@ -124,7 +124,6 @@ export function MainNav() {
 
         <SidebarSeparator />
 
-        {/* Section Management pour l'école (Shule style) */}
         {isStaff && (
           <>
             <SidebarGroup>
