@@ -6,153 +6,84 @@
       "description": "Represents a user's profile in the system.",
       "type": "object",
       "properties": {
-        "name": {
-          "type": "string",
-          "description": "The user's full name."
-        },
-        "email": {
-          "type": "string",
-          "format": "email",
-          "description": "The user's email address."
-        },
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
         "role": {
           "type": "string",
-          "description": "The user's role in the application.",
-          "enum": [
-            "Student",
-            "Teacher",
-            "Admin",
-            "Parent"
-          ]
-        }
+          "enum": ["Student", "Parent", "Teacher", "Accountant", "SchoolAdmin", "SuperAdmin"]
+        },
+        "schoolId": { "type": "string", "description": "ID of the school the user belongs to" }
       },
       "required": ["name", "email", "role"]
     },
-    "SchoolFee": {
-      "title": "School Fee",
-      "description": "Represents a school fee payment record.",
-      "type": "object",
-      "properties": {
-        "studentId": { "type": "string" },
-        "amount": { "type": "string" },
-        "status": { "type": "string", "enum": ["Payé", "En attente", "Partiel"] },
-        "date": { "type": "string", "format": "date-time" },
-        "term": { "type": "string" }
-      },
-      "required": ["studentId", "amount", "status"]
-    },
-    "StudentGrade": {
-      "title": "Student Grade",
-      "description": "Represents a grade obtained by a student.",
-      "type": "object",
-      "properties": {
-        "studentId": { "type": "string" },
-        "subject": { "type": "string" },
-        "score": { "type": "number" },
-        "maxScore": { "type": "number" },
-        "term": { "type": "string" },
-        "date": { "type": "string", "format": "date-time" }
-      },
-      "required": ["studentId", "subject", "score"]
-    },
-    "Attendance": {
-      "title": "Attendance",
-      "description": "Represents an attendance record.",
-      "type": "object",
-      "properties": {
-        "studentId": { "type": "string" },
-        "date": { "type": "string", "format": "date" },
-        "status": { "type": "string", "enum": ["Présent", "Absent", "Retard"] }
-      },
-      "required": ["studentId", "date", "status"]
-    },
-    "SchoolNews": {
-      "title": "School News",
-      "description": "General news and announcements from the school.",
-      "type": "object",
-      "properties": {
-        "title": { "type": "string" },
-        "content": { "type": "string" },
-        "date": { "type": "string", "format": "date-time" },
-        "category": { "type": "string" }
-      },
-      "required": ["title", "content", "date"]
-    },
-    "Course": {
-      "title": "Course",
-      "description": "Represents an educational course created by a school or teacher.",
-      "type": "object",
-      "properties": {
-        "title": { "type": "string" },
-        "description": { "type": "string" },
-        "category": { "type": "string" },
-        "level": { "type": "string" },
-        "duration": { "type": "string" },
-        "teacher": { "type": "string" },
-        "teacherId": { "type": "string" },
-        "imageUrl": { "type": "string" },
-        "createdAt": { "type": "string", "format": "date-time" }
-      },
-      "required": ["title", "description", "category", "teacherId"]
-    },
-    "Product": {
-      "title": "Product",
-      "description": "Represents a product listed on the marketplace.",
+    "School": {
+      "title": "School",
+      "description": "Educational institution registered on Soko+",
       "type": "object",
       "properties": {
         "name": { "type": "string" },
-        "description": { "type": "string" },
-        "price": { "type": "string" },
-        "category": { "type": "string" },
-        "location": { "type": "string" },
-        "sellerId": { "type": "string" },
-        "imageUrls": { "type": "array", "items": { "type": "string" } }
+        "logoUrl": { "type": "string" },
+        "stampUrl": { "type": "string", "description": "Official stamp image" },
+        "address": { "type": "string" },
+        "city": { "type": "string" },
+        "province": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "directorName": { "type": "string" },
+        "currency": { "type": "string", "enum": ["USD", "CDF"] },
+        "createdAt": { "type": "string", "format": "date-time" }
       },
-      "required": ["name", "price", "category", "sellerId"]
+      "required": ["name", "city", "province", "currency"]
     },
-    "Housing": {
-      "title": "Housing",
-      "description": "Represents a housing property listed on the platform.",
+    "Student": {
+      "title": "Student",
+      "description": "Student registered in a school",
       "type": "object",
       "properties": {
-        "title": { "type": "string" },
-        "description": { "type": "string" },
-        "price": { "type": "string" },
-        "type": { "type": "string", "enum": ["Maison", "Chambre", "Studio", "Terrain"] },
-        "location": { "type": "string" },
-        "ownerId": { "type": "string" },
-        "imageUrls": { "type": "array", "items": { "type": "string" } }
+        "schoolId": { "type": "string" },
+        "matricule": { "type": "string" },
+        "name": { "type": "string" },
+        "firstName": { "type": "string" },
+        "gender": { "type": "string", "enum": ["M", "F"] },
+        "birthDate": { "type": "string", "format": "date" },
+        "classId": { "type": "string" },
+        "parentName": { "type": "string" },
+        "parentPhone": { "type": "string" },
+        "address": { "type": "string" }
       },
-      "required": ["title", "price", "type", "location", "ownerId"]
+      "required": ["schoolId", "matricule", "name", "firstName", "classId"]
+    },
+    "FeeConfig": {
+      "title": "Fee Configuration",
+      "description": "Types of fees defined by the school",
+      "type": "object",
+      "properties": {
+        "schoolId": { "type": "string" },
+        "name": { "type": "string" },
+        "amount": { "type": "number" },
+        "description": { "type": "string" }
+      }
+    },
+    "Payment": {
+      "title": "Payment",
+      "description": "Record of a student fee payment",
+      "type": "object",
+      "properties": {
+        "schoolId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "feeId": { "type": "string" },
+        "amount": { "type": "number" },
+        "method": { "type": "string", "enum": ["Cash", "Mobile Money", "Bank"] },
+        "date": { "type": "string", "format": "date-time" },
+        "receiptNumber": { "type": "string" },
+        "comptableId": { "type": "string" }
+      }
     }
-  },
-  "auth": {
-    "providers": ["email_password"]
   },
   "firestore": {
-    "/users/{userId}": {
-      "schema": { "$ref": "#/entities/UserProfile" },
-      "description": "Stores user profile information."
-    },
-    "/schoolFees/{feeId}": {
-      "schema": { "$ref": "#/entities/SchoolFee" },
-      "description": "Stores school fee records."
-    },
-    "/grades/{gradeId}": {
-      "schema": { "$ref": "#/entities/StudentGrade" },
-      "description": "Stores student grades."
-    },
-    "/attendance/{attendanceId}": {
-      "schema": { "$ref": "#/entities/Attendance" },
-      "description": "Stores attendance records."
-    },
-    "/schoolNews/{newsId}": {
-      "schema": { "$ref": "#/entities/SchoolNews" },
-      "description": "Stores school announcements."
-    },
-    "/courses/{courseId}": {
-      "schema": { "$ref": "#/entities/Course" },
-      "description": "Stores educational courses."
-    }
+    "/schools/{schoolId}": { "schema": { "$ref": "#/entities/School" } },
+    "/students/{studentId}": { "schema": { "$ref": "#/entities/Student" } },
+    "/feeConfigs/{feeId}": { "schema": { "$ref": "#/entities/FeeConfig" } },
+    "/payments/{paymentId}": { "schema": { "$ref": "#/entities/Payment" } }
   }
 }

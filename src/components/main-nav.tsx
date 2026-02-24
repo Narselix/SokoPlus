@@ -31,12 +31,13 @@ import {
   FileSpreadsheet,
   MessageSquareText,
   Newspaper,
-  BookOpen,
-  Users,
-  CheckSquare,
   Library,
   Archive,
-  BookOpenText
+  BookOpenText,
+  Users,
+  Settings,
+  ShieldCheck,
+  Wallet
 } from "lucide-react";
 import { SokoPlusLogo } from "./icons";
 import { useUser } from "@/firebase";
@@ -45,54 +46,38 @@ export function MainNav() {
   const pathname = usePathname();
   const { userProfile } = useUser();
 
-  const isStaff = userProfile?.role === "Teacher" || userProfile?.role === "Admin";
+  const role = userProfile?.role;
+  const isSuperAdmin = role === "SuperAdmin";
+  const isSchoolAdmin = role === "SchoolAdmin";
+  const isAccountant = role === "Accountant";
+  const isTeacher = role === "Teacher";
+  const isStudentParent = role === "Student" || role === "Parent";
 
   const primaryLinks = [
     { href: "/dashboard", label: "Tableau de bord", icon: LayoutDashboard },
   ];
 
+  const superAdminLinks = [
+    { href: "/schooling/superadmin/schools", label: "Gérer les Écoles", icon: ShieldCheck },
+  ];
+
+  const schoolAdminLinks = [
+    { href: "/schooling/admin/students", label: "Gestion Élèves", icon: Users },
+    { href: "/schooling/admin/courses", label: "Gestion Cours", icon: BookOpenText },
+    { href: "/schooling/admin/accounting", label: "Comptabilité", icon: Wallet },
+    { href: "/schooling/admin/reports", label: "Rapports Financiers", icon: FileSpreadsheet },
+  ];
+
+  const accountantLinks = [
+    { href: "/schooling/admin/students", label: "Chercher Élève", icon: Users },
+    { href: "/schooling/admin/accounting", label: "Saisir Paiement", icon: Receipt },
+  ];
+
   const schoolingLinks = [
     { href: "/schooling/grades", label: "Notes & Résultats", icon: FileSpreadsheet },
-    { href: "/schooling/fees", label: "Frais Scolaires", icon: Receipt },
+    { href: "/schooling/fees", label: "Mes Paiements", icon: Wallet },
     { href: "/schooling/news", label: "Actualités École", icon: Newspaper },
     { href: "/schooling/messages", label: "Messages École", icon: MessageSquareText },
-  ];
-
-  const managementLinks = [
-    { href: "/schooling/admin/attendance", label: "Faire l'appel", icon: CheckSquare },
-    { href: "/schooling/admin/grades", label: "Saisie des notes", icon: GraduationCap },
-    { href: "/schooling/admin/courses", label: "Gestion des Cours", icon: BookOpenText },
-    { href: "/schooling/library", label: "Bibliothèque", icon: Library },
-    { href: "/schooling/archives", label: "Archives", icon: Archive },
-  ];
-
-  const educationLinks = [
-    { href: "/education", label: "Catalogue Cours", icon: GraduationCap },
-    { href: "/courses", label: "Mes Cours", icon: BookCopy },
-    { href: "/certificates", label: "Mes Certificats", icon: Award },
-  ];
-
-  const communityLinks = [
-    { href: "/market", label: "Marché Local", icon: Store },
-    { href: "/jobs", label: "Emploi", icon: Briefcase },
-    { href: "/freelance", label: "Freelance", icon: ClipboardSignature },
-    { href: "/housing", label: "Logement", icon: Home },
-    { href: "/transport", label: "Transport", icon: Car },
-    { href: "/solidarity", label: "Solidarité", icon: HeartHandshake },
-  ];
-
-  const servicesLinks = [
-    { href: "/health", label: "Santé & Orientation", icon: HeartPulse },
-    { href: "/pharmacy", label: "Pharmacie", icon: Pill },
-    { href: "/well-being", label: "Bien-être", icon: Smile },
-  ];
-
-  const aiLinks = [
-    { href: "/recommendations", label: "Pour vous (IA)", icon: Wand2 },
-  ];
-
-  const governanceLinks = [
-    { href: "/governance", label: "Administration", icon: Landmark },
   ];
 
   const renderLinks = (links: any[]) => links.map((link) => (
@@ -124,54 +109,74 @@ export function MainNav() {
 
         <SidebarSeparator />
 
-        {isStaff && (
+        {isSuperAdmin && (
+          <>
+            <SidebarGroup>
+              <SidebarGroupLabel>Administration Soko+</SidebarGroupLabel>
+              <SidebarMenu>{renderLinks(superAdminLinks)}</SidebarMenu>
+            </SidebarGroup>
+            <SidebarSeparator />
+          </>
+        )}
+
+        {(isSchoolAdmin || isAccountant) && (
           <>
             <SidebarGroup>
               <SidebarGroupLabel>Gestion École</SidebarGroupLabel>
-              <SidebarMenu>{renderLinks(managementLinks)}</SidebarMenu>
+              <SidebarMenu>{renderLinks(isSchoolAdmin ? schoolAdminLinks : accountantLinks)}</SidebarMenu>
+            </SidebarGroup>
+            <SidebarSeparator />
+          </>
+        )}
+
+        {isStudentParent && (
+          <>
+            <SidebarGroup>
+              <SidebarGroupLabel>Ma Scolarité</SidebarGroupLabel>
+              <SidebarMenu>{renderLinks(schoolingLinks)}</SidebarMenu>
             </SidebarGroup>
             <SidebarSeparator />
           </>
         )}
 
         <SidebarGroup>
-          <SidebarGroupLabel>Ma Scolarité</SidebarGroupLabel>
-          <SidebarMenu>{renderLinks(schoolingLinks)}</SidebarMenu>
+          <SidebarGroupLabel>Services Communautaires</SidebarGroupLabel>
+          <SidebarMenu>
+            {renderLinks([
+              { href: "/market", label: "Marché Local", icon: Store },
+              { href: "/jobs", label: "Emploi", icon: Briefcase },
+              { href: "/housing", label: "Logement", icon: Home },
+              { href: "/transport", label: "Transport", icon: Car },
+              { href: "/solidarity", label: "Solidarité", icon: HeartHandshake },
+            ])}
+          </SidebarMenu>
         </SidebarGroup>
 
         <SidebarSeparator />
 
         <SidebarGroup>
-          <SidebarGroupLabel>Auto-Formation</SidebarGroupLabel>
-          <SidebarMenu>{renderLinks(educationLinks)}</SidebarMenu>
+          <SidebarGroupLabel>Santé & Bien-être</SidebarGroupLabel>
+          <SidebarMenu>
+            {renderLinks([
+              { href: "/health", label: "Santé", icon: HeartPulse },
+              { href: "/pharmacy", label: "Pharmacie", icon: Pill },
+              { href: "/well-being", label: "Bien-être", icon: Smile },
+            ])}
+          </SidebarMenu>
         </SidebarGroup>
 
         <SidebarSeparator />
 
         <SidebarGroup>
-          <SidebarGroupLabel>Communauté</SidebarGroupLabel>
-          <SidebarMenu>{renderLinks(communityLinks)}</SidebarMenu>
-        </SidebarGroup>
-
-        <SidebarSeparator />
-
-        <SidebarGroup>
-          <SidebarGroupLabel>Services</SidebarGroupLabel>
-          <SidebarMenu>{renderLinks(servicesLinks)}</SidebarMenu>
-        </SidebarGroup>
-
-        <SidebarSeparator />
-
-        <SidebarGroup>
-          <SidebarGroupLabel>IA & Perso</SidebarGroupLabel>
-          <SidebarMenu>{renderLinks(aiLinks)}</SidebarMenu>
+          <SidebarGroupLabel>Outils IA</SidebarGroupLabel>
+          <SidebarMenu>{renderLinks([{ href: "/recommendations", label: "Pour vous (IA)", icon: Wand2 }])}</SidebarMenu>
         </SidebarGroup>
 
         <SidebarSeparator />
 
         <SidebarGroup>
           <SidebarGroupLabel>Gouvernance</SidebarGroupLabel>
-          <SidebarMenu>{renderLinks(governanceLinks)}</SidebarMenu>
+          <SidebarMenu>{renderLinks([{ href: "/governance", label: "Administration", icon: Landmark }])}</SidebarMenu>
         </SidebarGroup>
       </SidebarMenu>
     </div>
