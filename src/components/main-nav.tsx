@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -14,15 +13,12 @@ import {
 import {
   LayoutDashboard,
   GraduationCap,
-  BookCopy,
-  Award,
   Store,
   Briefcase,
   HeartHandshake,
   Pill,
   Smile,
   Wand2,
-  ClipboardSignature,
   HeartPulse,
   Home,
   Car,
@@ -31,13 +27,11 @@ import {
   FileSpreadsheet,
   MessageSquareText,
   Newspaper,
-  Library,
-  Archive,
   BookOpenText,
   Users,
-  Settings,
   ShieldCheck,
-  Wallet
+  Wallet,
+  Archive
 } from "lucide-react";
 import { SokoPlusLogo } from "./icons";
 import { useUser } from "@/firebase";
@@ -66,11 +60,13 @@ export function MainNav() {
     { href: "/schooling/admin/courses", label: "Gestion Cours", icon: BookOpenText },
     { href: "/schooling/admin/accounting", label: "Comptabilité", icon: Wallet },
     { href: "/schooling/admin/reports", label: "Rapports Financiers", icon: FileSpreadsheet },
+    { href: "/schooling/admin/archives", label: "Archives École", icon: Archive },
   ];
 
   const accountantLinks = [
     { href: "/schooling/admin/students", label: "Chercher Élève", icon: Users },
     { href: "/schooling/admin/accounting", label: "Saisir Paiement", icon: Receipt },
+    { href: "/schooling/admin/reports", label: "Rapports", icon: FileSpreadsheet },
   ];
 
   const schoolingLinks = [

@@ -1,122 +1,165 @@
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { BookCopy, CheckCircle, Percent, Clock } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { 
+  GraduationCap, 
+  Store, 
+  Briefcase, 
+  HeartHandshake, 
+  TrendingUp, 
+  Users, 
+  Wallet,
+  ArrowUpRight
+} from "lucide-react";
 import Link from "next/link";
 import { useUser } from "@/firebase";
-import { courses } from "@/lib/placeholder-data";
-import Image from "next/image";
-import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 export default function DashboardPage() {
     const { userProfile } = useUser();
-    const activeCourses = courses.filter(c => c.progress > 0 && c.progress < 100);
 
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight font-headline">Tableau de bord</h1>
-        <p className="text-muted-foreground">Bienvenue, {userProfile?.name} ! Prêt à apprendre ?</p>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight font-headline">Bonjour, {userProfile?.name?.split(' ')[0]} !</h1>
+          <p className="text-muted-foreground">Bienvenue sur votre espace Soko+. Voici un aperçu de l'écosystème aujourd'hui.</p>
+        </div>
+        <div className="flex gap-2">
+            <Badge variant="outline" className="px-3 py-1 bg-primary/5 text-primary border-primary/20">
+                Rôle : {userProfile?.role || 'Utilisateur'}
+            </Badge>
+        </div>
       </div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <Card>
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Cours Inscrits</CardTitle>
-                    <BookCopy className="h-4 w-4 text-muted-foreground" />
-                </CardHeader>
-                <CardContent>
-                    <div className="text-2xl font-bold">{courses.length}</div>
-                </CardContent>
-            </Card>
-            <Card>
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Cours Terminés</CardTitle>
-                    <CheckCircle className="h-4 w-4 text-muted-foreground" />
-                </CardHeader>
-                <CardContent>
-                    <div className="text-2xl font-bold">{courses.filter(c => c.progress === 100).length}</div>
-                </CardContent>
-            </Card>
-             <Card>
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Progression Moyenne</CardTitle>
-                    <Percent className="h-4 w-4 text-muted-foreground" />
-                </CardHeader>
-                <CardContent>
-                    <div className="text-2xl font-bold">
-                        {courses.length > 0 ? Math.round(courses.reduce((acc, c) => acc + c.progress, 0) / courses.length) : 0}%
-                    </div>
-                </CardContent>
-            </Card>
-             <Card>
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Heures Apprises</CardTitle>
-                    <Clock className="h-4 w-4 text-muted-foreground" />
-                </CardHeader>
-                <CardContent>
-                    <div className="text-2xl font-bold">12h</div>
-                </CardContent>
-            </Card>
-        </div>
+      {/* ECOSYSTEM OVERVIEW */}
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <StatCard 
+            title="Scolarité" 
+            value="Actif" 
+            description="Suivi en temps réel" 
+            icon={<GraduationCap className="h-5 w-5" />}
+            href="/schooling/grades"
+            color="bg-orange-500"
+        />
+        <StatCard 
+            title="Marché" 
+            value="Nouveau" 
+            description="Produits locaux" 
+            icon={<Store className="h-5 w-5" />}
+            href="/market"
+            color="bg-teal-500"
+        />
+        <StatCard 
+            title="Emploi" 
+            value="Missions" 
+            description="Opportunités au Kivu" 
+            icon={<Briefcase className="h-5 w-5" />}
+            href="/jobs"
+            color="bg-blue-500"
+        />
+        <StatCard 
+            title="Solidarité" 
+            value="Donner" 
+            description="Soutenez la communauté" 
+            icon={<HeartHandshake className="h-5 w-5" />}
+            href="/solidarity"
+            color="bg-rose-500"
+        />
+      </div>
 
-      <div className="space-y-4">
-        <h2 className="text-2xl font-bold tracking-tight font-headline">Continuer à apprendre</h2>
-        {activeCourses.length > 0 ? (
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {activeCourses.map((course) => (
-                <CourseCard key={course.id} course={course} />
-            ))}
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-7">
+        {/* MAIN SERVICES SECTION */}
+        <Card className="lg:col-span-4">
+          <CardHeader>
+            <CardTitle className="font-headline">Services Prioritaires</CardTitle>
+            <CardDescription>Accédez rapidement aux outils essentiels de votre quotidien.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                 <Link href="/schooling/fees" className="group">
+                    <div className="p-4 border rounded-lg hover:border-primary transition-colors flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                            <div className="h-10 w-10 rounded bg-primary/10 flex items-center justify-center text-primary">
+                                <Wallet className="h-5 w-5" />
+                            </div>
+                            <div>
+                                <p className="font-bold text-sm">Frais Scolaires</p>
+                                <p className="text-xs text-muted-foreground">Paiement & Reçus</p>
+                            </div>
+                        </div>
+                        <ArrowUpRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                </Link>
+                <Link href="/recommendations" className="group">
+                    <div className="p-4 border rounded-lg hover:border-accent transition-colors flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                            <div className="h-10 w-10 rounded bg-accent/10 flex items-center justify-center text-accent">
+                                <TrendingUp className="h-5 w-5" />
+                            </div>
+                            <div>
+                                <p className="font-bold text-sm">Conseils IA</p>
+                                <p className="text-xs text-muted-foreground">Suggestions pour vous</p>
+                            </div>
+                        </div>
+                        <ArrowUpRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                </Link>
             </div>
-        ) : (
-            <div className="text-center py-12 border-2 border-dashed rounded-lg">
-                <p className="text-muted-foreground mb-4">Vous n'avez aucun cours en progression.</p>
-                <Button asChild>
-                    <Link href="/courses">Explorer les cours</Link>
-                </Button>
+            
+            <div className="mt-6">
+                <h4 className="text-sm font-semibold mb-3">Activités Récentes</h4>
+                <div className="space-y-3">
+                    <p className="text-sm text-muted-foreground italic border-l-2 pl-3 py-1">Bienvenue sur la version améliorée de Soko+. Vos activités récentes apparaîtront ici.</p>
+                </div>
             </div>
-        )}
+          </CardContent>
+        </Card>
+
+        {/* ECOSYSTEM NEWS / COMMUNITY FEED */}
+        <Card className="lg:col-span-3">
+          <CardHeader>
+            <CardTitle className="font-headline">Communauté Kivu</CardTitle>
+            <CardDescription>Dernières nouvelles de la région.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+             <div className="p-4 bg-muted/50 rounded-lg">
+                <Badge className="mb-2">Événement</Badge>
+                <p className="font-bold text-sm">Foire des Artisans de Goma</p>
+                <p className="text-xs text-muted-foreground mt-1">Samedi prochain à la place de l'Indépendance.</p>
+             </div>
+             <div className="p-4 border rounded-lg">
+                <Badge variant="outline" className="mb-2">Alerte Santé</Badge>
+                <p className="font-bold text-sm">Campagne de Vaccination</p>
+                <p className="text-xs text-muted-foreground mt-1">Plus d'infos dans l'annuaire santé.</p>
+             </div>
+             <Button variant="outline" className="w-full" asChild>
+                <Link href="/governance">Toutes les annonces</Link>
+             </Button>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
 }
 
-function CourseCard({ course }: { course: (typeof courses)[0] }) {
-  return (
-    <Card className="flex flex-col h-full overflow-hidden hover:shadow-lg transition-shadow duration-300">
-        <Link href={`/courses/${course.id}`} className="flex flex-col h-full">
-            <CardHeader className="p-0">
-                {course.image && (
-                <div className="aspect-video relative w-full">
-                    <Image
-                    src={course.image.imageUrl}
-                    alt={course.title}
-                    fill
-                    className="object-cover"
-                    data-ai-hint={course.image.imageHint}
-                    />
-                </div>
-                )}
-            </CardHeader>
-            <CardContent className="p-4 flex-grow flex flex-col">
-                <Badge variant="secondary" className="w-fit mb-2">{course.category}</Badge>
-                <CardTitle className="text-lg font-headline leading-tight mb-2 flex-grow">{course.title}</CardTitle>
-                <div className="text-xs text-muted-foreground mb-4">{course.duration} de formation</div>
-                {course.progress > 0 && (
-                <div className="space-y-1">
-                    <Progress value={course.progress} className="h-2" />
-                    <p className="text-xs text-muted-foreground">{course.progress}% complété</p>
-                </div>
-                )}
-            </CardContent>
-            <CardFooter className="p-4 pt-0">
-                <Button className="w-full">
-                {course.progress > 0 ? "Continuer le cours" : "Commencer le cours"}
-                </Button>
-            </CardFooter>
+function StatCard({ title, value, description, icon, href, color }: any) {
+    return (
+        <Link href={href}>
+            <Card className="hover:shadow-md transition-shadow group overflow-hidden relative">
+                <div className={`absolute top-0 left-0 w-1 h-full ${color}`} />
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                    <CardTitle className="text-sm font-medium">{title}</CardTitle>
+                    <div className={`p-2 rounded-full bg-muted group-hover:bg-primary/10 group-hover:text-primary transition-colors`}>
+                        {icon}
+                    </div>
+                </CardHeader>
+                <CardContent>
+                    <div className="text-2xl font-bold">{value}</div>
+                    <p className="text-xs text-muted-foreground">{description}</p>
+                </CardContent>
+            </Card>
         </Link>
-    </Card>
-  );
+    );
 }
