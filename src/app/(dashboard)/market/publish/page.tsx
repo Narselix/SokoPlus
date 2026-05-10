@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -16,7 +17,7 @@ import * as z from "zod";
 import { useFirestore, useStorage, useUser } from '@/firebase';
 import { useToast } from '@/hooks/use-toast';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
@@ -98,9 +99,6 @@ export default function PublishAdPage() {
     
     try {
       const imageUrls = await uploadImages();
-      if (imageFiles.length > 0 && imageUrls.length === 0) {
-        throw new Error("Le téléversement de l'image a échoué.");
-      }
       
       const productData = {
         name: values.title,
@@ -110,17 +108,17 @@ export default function PublishAdPage() {
         location: values.location,
         sellerId: user.uid,
         imageUrls: imageUrls,
+        createdAt: serverTimestamp(),
       };
 
-      await addDoc(collection(firestore, 'products'), productData)
-        .catch(err => {
+      addDoc(collection(firestore, 'products'), productData)
+        .catch(async (err) => {
             const permissionError = new FirestorePermissionError({
-                path: `products/unknown`,
+                path: `products`,
                 operation: 'create',
                 requestResourceData: productData,
             });
             errorEmitter.emit('permission-error', permissionError);
-            throw err;
         });
 
       toast({ title: 'Annonce publiée', description: 'Votre produit est maintenant visible sur le marché.' });

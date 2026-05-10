@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -16,7 +17,7 @@ import * as z from 'zod';
 import { useFirestore, useStorage, useUser } from '@/firebase';
 import { useToast } from '@/hooks/use-toast';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
@@ -97,9 +98,6 @@ export default function PublishHousingPage() {
     
     try {
       const imageUrls = await uploadImages();
-      if (imageFiles.length > 0 && imageUrls.length === 0) {
-        throw new Error("Le téléversement de l'image a échoué.");
-      }
       
       const housingData = {
         title: values.title,
@@ -109,17 +107,17 @@ export default function PublishHousingPage() {
         location: values.location,
         ownerId: user.uid,
         imageUrls: imageUrls,
+        createdAt: serverTimestamp(),
       };
 
-      await addDoc(collection(firestore, 'housing'), housingData)
-        .catch(err => {
+      addDoc(collection(firestore, 'housing'), housingData)
+        .catch(async (err) => {
             const permissionError = new FirestorePermissionError({
-                path: 'housing/unknown',
+                path: 'housing',
                 operation: 'create',
                 requestResourceData: housingData,
             });
             errorEmitter.emit('permission-error', permissionError);
-            throw err;
         });
 
       toast({ title: 'Annonce publiée', description: 'Votre logement est maintenant visible.' });

@@ -78,12 +78,81 @@
         "receiptNumber": { "type": "string" },
         "comptableId": { "type": "string" }
       }
+    },
+    "Product": {
+      "title": "Product",
+      "description": "A product listed on the local market",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "string" },
+        "category": { "type": "string" },
+        "location": { "type": "string" },
+        "sellerId": { "type": "string" },
+        "imageUrls": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "price", "category", "sellerId"]
+    },
+    "HousingListing": {
+      "title": "Housing Listing",
+      "description": "A property listed for rent or sale",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "string" },
+        "type": { "type": "string" },
+        "location": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "imageUrls": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "price", "type", "ownerId"]
+    },
+    "Article": {
+      "title": "Article",
+      "description": "A well-being or informative article",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "authorId": { "type": "string" },
+        "category": { "type": "string" },
+        "content": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "author", "authorId", "category", "content"]
+    },
+    "Course": {
+      "title": "Course",
+      "description": "A pedagogic course published by a school staff",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "level": { "type": "string" },
+        "duration": { "type": "string" },
+        "teacher": { "type": "string" },
+        "teacherId": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "category", "teacherId"]
     }
   },
   "firestore": {
-    "/schools/{schoolId}": { "schema": { "$ref": "#/entities/School" } },
-    "/students/{studentId}": { "schema": { "$ref": "#/entities/Student" } },
-    "/feeConfigs/{feeId}": { "schema": { "$ref": "#/entities/FeeConfig" } },
-    "/payments/{paymentId}": { "schema": { "$ref": "#/entities/Payment" } }
+    "/schools/{schoolId}": { "schema": { "$ref": "#/entities/School" }, "description": "School details" },
+    "/students/{studentId}": { "schema": { "$ref": "#/entities/Student" }, "description": "Student records" },
+    "/feeConfigs/{feeId}": { "schema": { "$ref": "#/entities/FeeConfig" }, "description": "Fee definitions" },
+    "/payments/{paymentId}": { "schema": { "$ref": "#/entities/Payment" }, "description": "Payment records" },
+    "/products/{productId}": { "schema": { "$ref": "#/entities/Product" }, "description": "Market products" },
+    "/housing/{housingId}": { "schema": { "$ref": "#/entities/HousingListing" }, "description": "Real estate listings" },
+    "/articles/{articleId}": { "schema": { "$ref": "#/entities/Article" }, "description": "Well-being articles" },
+    "/courses/{courseId}": { "schema": { "$ref": "#/entities/Course" }, "description": "Educational courses" },
+    "/users/{userId}": { "schema": { "$ref": "#/entities/UserProfile" }, "description": "User profiles" }
   }
 }

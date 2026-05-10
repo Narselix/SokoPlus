@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -16,7 +17,7 @@ import * as z from 'zod';
 import { useFirestore, useStorage, useUser } from '@/firebase';
 import { useToast } from '@/hooks/use-toast';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
@@ -82,9 +83,6 @@ export default function PublishArticlePage() {
     
     try {
       const imageUrl = await uploadImage();
-      if (imageFile && !imageUrl) {
-        throw new Error("Le téléversement de l'image a échoué.");
-      }
       
       const articleData = {
         title: values.title,
@@ -93,17 +91,17 @@ export default function PublishArticlePage() {
         content: values.content,
         authorId: user.uid,
         imageUrl: imageUrl || null,
+        createdAt: serverTimestamp(),
       };
 
-      await addDoc(collection(firestore, 'articles'), articleData)
-        .catch(err => {
+      addDoc(collection(firestore, 'articles'), articleData)
+        .catch(async (err) => {
             const permissionError = new FirestorePermissionError({
-                path: 'articles/unknown',
+                path: 'articles',
                 operation: 'create',
                 requestResourceData: articleData,
             });
             errorEmitter.emit('permission-error', permissionError);
-            throw err;
         });
 
       toast({ title: 'Article publié', description: 'Votre article est maintenant visible.' });
