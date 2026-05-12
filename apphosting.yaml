@@ -2,6 +2,12 @@
 # https://firebase.google.com/docs/app-hosting/configure
 
 runConfig:
-  # Increase this value if you'd like to automatically spin up
-  # more instances in response to increased traffic.
-  maxInstances: 1
+  # Augmentation de la mémoire pour Next.js et Genkit
+  memory: 512Mi
+  # Nombre d'instances pour gérer le trafic
+  maxInstances: 10
+  minInstances: 0
+
+env:
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: studio-466280383-fc285
